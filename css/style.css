@@ -1,0 +1,633 @@
+* {
+      box-sizing: border-box;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      background: url(../assets/Club_illusion_interactivetable_bg.jpg);
+      background-size: cover;
+      /*padding: 20px;*/
+    }
+
+
+    /* touch Box css here */
+     #touchBox {
+      width: 100%;
+      height: 100%;
+      /*background-color: #f5f5f5;*/
+      /*border: 2px dashed #cccccc;*/
+      position: relative;
+    }
+
+    /* Main video */
+    #video {
+      display: none;
+      width: 1350px;
+      height: 935px;
+      background: black;
+    }
+
+    /** Sub Video */
+
+    .video__container {
+     /* display: flex;
+      background: #ccc;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;*/
+      position: absolute;
+      display: none;
+    }
+
+    .video {
+      width: 100%;
+    }
+
+    .c__video {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .video__controls {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      flex-wrap: wrap;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .video__buttons button{
+      background: none;
+      border: 0;
+      outline: 0;
+    }
+
+    .video__buttons {
+      padding: 10px;
+      background: #000;
+    }
+
+    .fas {
+      color: white;
+    }
+
+    .video__bar {
+      height: 10px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #000;
+    }
+
+    .video__innerBar {
+      height: 10px;
+      background-color: orangered;
+    }
+
+    #pause {
+      display: none;
+    }
+
+  
+
+    /* LOGO */
+    .logo{
+      position: absolute;
+      right: 20px;
+      top: 150px;
+      z-index: 101;
+    }
+
+    .logo_img {
+      width: 190px;
+    }
+
+    /** menu stye */
+    .menu__explore{
+      position: absolute;
+      right: 60px;
+      top: 290px;
+      z-index: 101;
+    }
+
+    .menuImg__explore,
+    .menuImg__games,
+    .menuImg__promotion
+     {
+      width: 100px;
+    }
+
+    .menu__game{
+      position: absolute;
+      right: 60px;
+      top: 445px;
+      z-index: 101;
+    }
+
+    .menu__promotion{
+      position: absolute;
+      right: 60px;
+      top: 595px;
+      z-index: 101;
+    }
+
+    .menu__explore h2,
+    .menu__promotion h2,
+    .menu__game h2,
+    .menu__game1 h2,
+    .menu__game2 h2,
+    .menu__game3 h2{
+      color: white;
+      text-align: center;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    #menu__gamelist {
+      display: none;
+    }
+
+    .menu__game1{
+      position: absolute;
+      left: 19%;
+      top: 365px;
+      z-index: 101;
+    }
+
+    .menu__game2{
+      position: absolute;
+      left: 39%;
+      top: 365px;
+      z-index: 101;
+    }
+
+    .menu__game3{
+      position: absolute;
+      left: 59%;
+      top: 365px;
+      z-index: 101;
+    }
+    
+    .menuImg__dice,
+    .menuImg__flip,
+    .menuImg__tap{
+      width: 120px;
+    }
+
+
+
+  /** bottle style **/
+  .square {
+      position: absolute;
+      width: 300px; 
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bottleContent__square-1 {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 400px;/*625*/
+      bottom: -25px;/*230*/
+    }
+
+    .bottleButton__style-1,
+    .bottleButton__style-2,
+    .bottleButton__style-3,
+    .bottleButtonOption__style-1 {
+     position: absolute;
+    left: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 51px;
+    width: 139px;
+    height: 195px;
+    /*background: linear-gradient(45deg, black, transparent);*/
+    /*border: 1px solid white;*/
+    border-radius: 50%;
+    }
+
+    .bottleButton__style-1 h2,
+    .bottleButton__style-2 h2,
+    .bottleButton__style-3 h2 {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 100;
+      font-size: 1.1rem;
+    }
+
+    #mainBottle__container-1{
+      display: none;
+      transform: translate(12%, 720px);
+    }
+
+    #mainBottle__container-2{
+      display: none;
+      transform: translate(12%, 720px);
+    }
+
+    #mainBottle__container-3{
+      display: none;
+    }
+
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(rgb(179, 210, 241),rgba(16, 169, 247, 0.79),rgb(13, 36, 45));
+      /*animation: loader 1s linear infinite;*/
+    }
+
+    .loader span{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+          background: linear-gradient(rgb(179, 210, 241),rgba(16, 169, 247, 0.79),rgb(13, 36, 45));
+    }
+
+    .bottleContent__loader-1 {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+        background: linear-gradient(rgb(179, 210, 241),rgba(16, 169, 247, 0.79),rgb(13, 36, 45));
+    }
+
+    .bottleContent__loader-1 span{
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+          background: linear-gradient(rgb(179, 210, 241),rgba(16, 169, 247, 0.79),rgb(13, 36, 45));
+    }
+
+    .bottleContent__loader-1:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      border-radius: 50%;
+    }
+
+
+    .bottleContent__loaderBackground-1:after {
+      background: black;
+    }
+
+    .bottleContent__loaderBackground-3:after {
+      background-image: url(../assets/images/select-artistry.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: brightness(70%);
+    }
+
+    .bottleContent__loaderBackground-3-1:after {
+      background-image: url(../assets/images/bg-proudly.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: brightness(70%);
+    }
+
+    .bottleContent__loaderBackground-3-2:after {
+      background-image: url(../assets/images/bg-growing.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: brightness(70%);
+    }
+
+    .bottleContent__loaderBackground-3-3:after {
+      background-image: url(../assets/images/bg-distilling.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: brightness(70%);
+    }
+
+    .bottleContent__loaderBackground-3-4:after {
+      background-image: url(../assets/images/bg-ageing.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: brightness(70%);
+    }
+
+    .loader:after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    @keyframes loader {
+      0%{
+        transform: rotate(0deg);
+      }
+      100% {
+        transform:rotate(360deg);
+      }
+    }
+
+    .bottleBase_loadercontainer1{
+      width: 150px;
+      height: 150px;
+      position: relative;
+      left: 78px;
+    bottom: -48px;
+    transform: rotateX(83deg);    
+  }
+
+    .loaderBase {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: white;
+      filter: blur(20px);
+      /*animation: loader 1s linear infinite;*/
+    }
+
+    .loaderBase span{
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+          background:white;
+    }
+
+    .loaderBase:after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
+      background: white;
+      border-radius: 50%;
+      filter: blur(27px);
+    }
+
+    .bottle_loadercontainer1{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      left: 150px;/*310*/
+      bottom: 150px;
+      transform: scale(0);
+    }
+
+    .bottle_loadercontainer2{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      left: 92px;/*200*/
+      bottom: 30px;
+      transform: scale(0);
+    }
+
+    .bottle_loadercontainer3{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      left: -50px;/*0*/
+      top: 90px;
+      transform: scale(0);
+    }
+    .bottleBaseOption_loadercontainer1 {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      right:210px;
+      bottom: 165px;
+    }
+
+    #bottleButtonOption1__loader-1,
+    #bottleButtonOption1__loader-2 {
+      animation: loader 1s linear infinite;
+    }
+
+    .bottleBaseOption_loadercontainer2 {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      right:120px;
+      bottom: 275px;
+    }
+
+    .bottleButtonOption__style-1 h2 {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 100;
+      font-size: 0.9rem;
+    }
+
+    .bottleBaseImg_loadercontainer1,
+    .bottleBaseImg_loadercontainer2  {
+      position: absolute;
+      left: -40px;
+      bottom: -16px;
+    }
+
+
+    .bottleBaseImg_loadercontainer1 img,
+    .bottleBaseImg_loadercontainer2 img {
+      width: 100px;
+    }
+    
+
+    
+
+    /** content display **/
+    .bottleContent__loaderContainer-1{
+        
+        display: none;
+    }
+
+
+    /* Content header/body/details  */
+
+    #content-img__bottle1 {
+      opacity: 1;
+    }
+
+    #content-detail__bottle1 {
+      display: none;
+    }
+
+    #bottleContent__courvoisier-3-1,
+    #bottleContent__courvoisier-3-2,
+    #bottleContent__courvoisier-3-3,
+    #bottleContent__courvoisier-3-4 {
+      display: none;
+    }
+
+    .content-header__bottle1 {
+      position: absolute;
+      padding: 0px 10px;
+      color: #fff;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 100;
+    }
+
+    .content-header-pos__bottle1 {
+      top: 45px;
+    }
+
+    .content-header__bottle1 h2{
+      font-size: 1.8rem;
+    }
+
+    .content-img__bottle1 {
+      position: absolute;
+      padding: 40px 60px;
+      transition: 0.5s;
+      z-index: 99;
+      bottom: 20px;
+    }
+
+    .content-img__bottle1-1 {
+      position: absolute;
+      padding: 40px 60px;
+      transition: 0.5s;
+      z-index: 99;
+      bottom: 5px;
+    }
+
+    .content-img__bottle1-1 img {
+      opacity: 0.3;
+    }
+
+    .content-img2__bottle1 {
+      position: absolute;
+      padding: 40px 60px;
+      transition: 0.5s;
+      z-index: 99;
+      bottom: 60px;
+    }
+
+    .content-img2__bottle1 img{
+      width: 200px;
+    }
+
+    .content-img__bottle1 img{
+      height: 20rem;
+    }
+
+    .content-img__bottle1-1 img{
+      height: 14rem;
+    }
+
+    .content-detail__bottle1 {
+      position: absolute;
+      padding: 40px 60px;
+      color: #fff;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 100;
+    }
+
+    .content-detail__bottle1 p {
+      font-size: 0.9rem;
+    }
+
+    .content-detail__bottle1 h2 {
+      font-size: 1.4rem;
+    }
+
+    .content-details__bottle1 {
+
+    }
+
+    .content-body__bottle1 {
+      position: absolute;
+      padding: 0px 60px;
+      color: #fff;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 100;
+      bottom: 25px;
+    }
+
+    .content-body__bottle1 p{
+      opacity: 0.5;
+      font-size: 1.3rem;
+    }
+
+    .content-button__bottle1 {
+        position: absolute;
+        padding: 40px 60px;
+        color: #fff;
+        text-align: center;
+        transition: 0.5s;
+        z-index: 100;
+      }
+
+
+    .content-button-left__bottle1 {
+      left: -40px;
+    }
+
+    .content-button-right__bottle1 {
+      right: -40px;
+    }
+
+    .content-button__inner {
+      border: none;
+      outline: 0;
+      background: transparent;
+    }
+
+
+    .content-icon-left__bottle1 {
+      font-size: 2.5rem;
+    }
+
+    .content-icon-right__bottle1 {
+      font-size: 2.5rem;
+    }
+
+    .content-header-pos__inner {
+      top: 50px;
+    }
+
+    .content-header-pos__inner h3{
+      font-size: 1.3rem;
+    }
+

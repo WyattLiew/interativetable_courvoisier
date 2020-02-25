@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Triangle Tracker Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+    
+   <link rel="stylesheet" href="css/all.css"/>
+   <link rel="stylesheet" type="text/css" href="css/game.css"/>
+   <link rel="stylesheet" type="text/css" href="css/explore.css"/>
+   <link rel="stylesheet" type="text/css" href="css/promotion.css"/>
+   <link rel="stylesheet" type="text/css" href="css/style.css"/>
+   <link rel="stylesheet" type="text/css" href="css/contentsOPS.css"/>
+   <link rel="stylesheet" type="text/css" href="css/mainscreen.css"/>
+  <style>
+
+    #resultBox {
+      width: 100%;
+      height: 20%;
+    }
+
+    #resultBox table {
+      padding-top: 20px;
+      width: 100%;
+      height: 100%;
+      border-spacing: 10px;
+      border-collapse: separate;
+      z-index: 10;
+      color: white;
+    }
+
+    #resultBox table td,
+    #resultBox table th {
+      text-align: center;
+      vertical-align: middle;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 12.5%;
+    }
+
+    #resultBox table th {
+      padding: 10px;
+      font-size: 24px;
+      font-weight: normal;
+      height: 30px;
+    }
+
+    #resultBox table th.active {
+      background-color: #ffff00;
+    }
+
+
+
+  </style>
+<!-- <script type="text/javascript" src="../js/tritra.js"></script></head> -->
+<body>
+
+  <div id="touchBox">
+   <video id="video" autoplay loop muted>
+      <source src="#" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+     <!-- Video here -->
+          <div class="video__container" id="video__container">
+          <div class="c__video">
+            <video class="video" muted  >
+              <source src="#" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video__controls">
+                <div class="video__bar">
+                  <div class="video__innerBar">
+                    
+                  </div>
+                  <div class="video__buttons">
+
+                    <button id="video__play-pause" class="video__buttons"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" id="pause"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+
+<div class="logo">
+  <img ontouchstart="toScreenSaver()" class="logo_img" src="assets/couvoisierlogo.png"></button>
+</div>
+
+<div id="mainsceen__fireworks">
+<div class="mainscreen__logotext">
+  <span id="I">C</span>
+  <span id="I">O</span>
+  <span id="I">U</span>
+  <span id="I">R</span>
+  <span id="I">V</span>
+  <span id="I">O</span>
+  <span id="I">I</span>
+  <span id="I">S</span>
+  <span id="I">I</span>
+  <span id="I">E</span>
+  <span id="I">R</span>
+</div>
+<canvas id="c"></canvas>
+</div>
+
+<!-- explore button -->
+<div class="menu__explore">
+  <button id="trig-menu__explore" class="popup"><img class="menuImg__explore" src="assets/main/menuexplore.png"></button>
+  <h2>Explore</h2>
+</div>
+
+<!-- Game button -->
+<div class="menu__game">
+  <button id="trig-menu__game" class="popup"><img class="menuImg__games" src="assets/main/menudice.png"><span class="popuptext" id="game__Popup">Kindly place back the coasters to play the game.</span></button>
+  <h2>Games</h2>
+</div>
+
+<!-- Promotion button -->
+<div class="menu__promotion">
+  <button id="trig-menu__promotion" class="popup"><img class="menuImg__promotion" src="assets/main/promotion.png"></button>
+  <h2>Promotion</h2>
+</div>
+
+<!-- Game list -->
+<div id="menu__gamelist">
+<!-- Game1 button -->
+<div class="menu__game1">
+  <button id="trig-menu__game1" class="popup"><img class="menuImg__dice" src="assets/main/menudice.png"></button>
+  <h2>Dice Game</h2>
+</div>
+
+<!-- Game2 button -->
+<div class="menu__game2">
+  <button id="trig-menu__game2" class="popup"><img class="menuImg__flip" src="assets/main/FlipCourvoisier.png"></button>
+  <h2>Flip Courvoisier</h2>
+</div>
+
+<!-- Game3 button -->
+<div class="menu__game3">
+  <button id="trig-menu__game3" class="popup"><img class="menuImg__tap" src="assets/main/Tapofwar.png"></button>
+  <h2>Tap of war</h2>
+</div>
+
+</div>
+
+<!-- Explore -->
+
+<div class="explore__container" id="explore__container">
+  <div class="exploreHeader__wrapper" id="exploreHeader__wrapper" >
+    <div class="explore__header"> 
+      <img src="assets/couvoisierlogo1.png">
+    </div>
+  </div>
+  <div class="exploreBody__wrapper" id="exploreBody__wrapper">
+    <div class="explore__body">
+      <p>Welcome to Courvoisier interative table!<br>To explore, feel free to touch the screen to explore more.</p>
+    </div>
+  </div>
+
+    <div ontouchstart="trigContent_OP()" id="explore_button2"  class="explore__animate explore__animate_opp">
+      <p>Touch <br> here<p>
+    </div>
+
+    <div ontouchstart="trigContent()" id="explore_button1" class="explore__animate explore__animate_normal">
+      <p>Touch <br> here<p>
+    </div>
+
+</div>
+
+<!-- Promotion -->
+
+<div class="promotion__container" id="promotion__container">
+  <div class="promotionHeader__wrapper" >
+    <div class="promotion__header"> 
+      <img src="assets/couvoisierlogo1.png">
+    </div>
+  </div>
+  <div class="promotionBody__wrapper">
+    <div class="promotion__body">
+      <img src="assets/couvoisierlogo1.png">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Dice Game -->
+<div class="game__container" id="dicegame__container">
+  <div class="game__wrapper">
+    <div class="game__table-box">
+      <div class="game__table-row" id="game__table-row1">
+        <div class="game__table-cell game__table-cell-width" >
+          <h1>6</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>FULL</h2>
+        </div>
+    </div>
+    <div class="game__table-row" id="game__table-row2">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>5</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>HALF</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table-row3">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>4</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>PLAYER TO THE RIGHT DRINK</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table-row4">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>3</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>PLAYER TO THE LEFT DRINK</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table-row5">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>2</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>SKIP</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table-row6">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>1</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>POINT SOMEONE TO DRINK</h2>
+        </div>
+    </div>
+    </div>
+    </div>
+
+ <div class="game__wrapper-2">
+    <div class="game__table-box">
+      <div class="game__table-row" id="game__table2-row1">
+        <div class="game__table-cell game__table-cell-width" >
+          <h1>6</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>FULL</h2>
+        </div>
+    </div>
+    <div class="game__table-row" id="game__table2-row2">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>5</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>HALF</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table2-row3">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>4</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>PLAYER TO THE RIGHT DRINK</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table2-row4">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>3</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>PLAYER TO THE LEFT DRINK</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table2-row5">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>2</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>SKIP</h2>
+        </div>
+    </div>
+     <div class="game__table-row" id="game__table2-row6">
+        <div class="game__table-cell game__table-cell-width">
+          <h1>1</h1>
+        </div>
+        <div class="game__table-cell">
+          <h2>POINT SOMEONE TO DRINK</h2>
+        </div>
+    </div>
+    </div>
+    </div>
+
+  <div class="gameButton__wrapper">
+    <img src="assets/games/dice/dice-5.png" alt="Dice" class="dice" id="dice" />
+    <!-- <button class="btn-roll btn-roll-icon" id="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button> -->
+    <a href="#" class="btn-roll" id="btn-roll">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Roll Dice
+    </a>
+  </div>
+
+  <div class="gameButton__wrapper-2">
+    <!-- <button class="btn-roll btn-roll-icon-2" id="btn-roll-2"><i class="ion-ios-loop"></i>Roll dice</button> -->
+    <a href="#" class="btn-roll" id="btn-roll-2">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Roll Dice
+    </a>
+  </div>
+</div>
+
+<!-- Flip Game -->
+ <div class="flipgame__container" id="flipgame__container">
+   <div class="flipgame__wrapper">
+     <div id="flip_board"></div>
+   </div>
+ </div>
+
+ <!-- tap Game -->
+ <div class="tapgame__container" id="tapgame__container">
+   <div class="tapgame__wrapper">
+      <div class="playerA__name"><h2>Player A</h2></div>
+      <div class="playerB__name"><h2>Player B</h2></div>
+     <!-- <div id="playerA_container"> -->
+      <div id="playerA_board">
+      <!-- <div class="playerA_icon"><img src="123.jpeg"></div> -->
+    </div>
+     <!-- </div> -->
+     <div id="playerB_board"></div>
+     <div class="tapgame__guide" id="tapgame__guide">
+       <h1>Tap as fast as you can!<br><br>See who's the fastest within 10 seconds!</h1>
+     </div>
+     <div class="tapgame__mode">
+       <div id="tapgame__timeMode">
+         <p id="tapgame__time">Start</p>
+       </div>
+       <div id="tapgame__readytimeMode">
+         <p id="tapgame__readytime">Ready</p>
+       </div>
+       <div id="tapgame__resultMode">
+         <p id="tapgame__result"></p>
+       </div>
+     </div>
+     <div class="buttonStart__board">
+       <button id="tapgame_start" ontouchstart="startTapGame()">Start Game</button>
+     </div>
+     <div class="buttonPlayAgain__board">
+       <button id="tapgame_playagain" ontouchstart="playAgainTapGame()">Play Again</button>
+     </div>
+     <div class="buttonA__board">
+       <button id="playerA_button" ontouchstart="playerA()">Tap me!</button>
+       <!-- <img src="assets/content/courvoisier-vsop-cognac.png" id="playerA_button" ontouchstart="playerA()"> -->
+     </div>
+     <div class="buttonB__board">
+       <button id="playerB_button" ontouchstart="playerB()">Tap me!</button>
+     </div>
+   </div>
+ </div>
+
+
+<!-- First bottle -->
+<div id="mainBottle__container-1">
+  <div class="square" id="square__bottle1">
+  <!-- <span></span> -->
+  <!-- <span></span>
+  <span></span>
+    <div class="content">
+        <h2>Courvoisier X.O.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dicta nihil assumenda, consequuntur natus neque voluptates amet voluptatibus labore quas, at quasi et doloribus molestiae fugiat nobis a delectus dolorem.</p>
+    </div> -->
+
+    <div id="bottleBase_loadercontainer1" class="bottleBase_loadercontainer1">
+    <div id="bottleButtonBase__loader-1" class="loaderBase">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="bottleBaseImg_loadercontainer1">
+    <img id="bottleBaseImg_loadercontainer1" src="assets/content/courvoisier-xo-cognac.png">
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer1">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div ontouchstart="trigContent()" class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>V.S.O.P</h2>
+    </div>
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer2">
+    <div id="bottleButtonOption1__loader-2" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>X.O.</h2>
+    </div>
+  </div>
+
+
+
+    <div id="bottle_loadercontainer1" class="bottle_loadercontainer1">
+    <div id="bottleButton__loader-1" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="Courvoisier(0)" class="bottleButton__style-1">
+        <h2>The<br>Drink</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer2" class="bottle_loadercontainer2">
+    <div id="bottleButton__loader-2" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <div ontouchstart="Taste(0)" class="bottleButton__style-2">
+        <h2>The<br>Taste</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer3" class="bottle_loadercontainer3">
+    <div id="bottleButton__loader-3" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  <div ontouchstart="Artistry(0)" class="bottleButton__style-3">
+        <h2>The<br>Artistry</h2>
+    </div>
+  </div>
+  
+    <div id="bottleContent__courvoisier-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+              <h2>Courvoisier X.O.</h2>
+          </div>
+           <div class="content-img__bottle1" id="content-img__bottle1">
+             <img src="assets/content/courvoisier-xo-cognac.png">
+          </div>
+          <div class="content-detail__bottle1" id="content-detail__bottle1">
+             <p>A very old blend of fine and well matured cognac, recognised as one of the finest.</p>
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Drink</p>
+          </div>
+      </div>
+    </div>
+
+     <div id="bottleContent__courvoisier-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+             <h2>Courvoisier X.O.</h2>
+          </div>
+          <div class="content-img__bottle1-1">
+              <img src="assets/content/thetaste.png">
+          </div>
+          <div class="content-img2__bottle1">
+              <img src="assets/content/courvoisier_xo.png">
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Taste</p>
+          </div>
+      </div>
+    </div>
+
+    <div  id="bottleContent__courvoisier-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-detail__bottle1">
+          <h2>What's special about Courvoiser?</h2>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button id="content-main-button__bottle1" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>1. The Barrels</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>Our barrels are made from 200-year-old oak trees to house the exquisite grapes.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(0,4)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(0,2)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+        
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>2. The Grapes</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The crus is selected for it's perfect combination of clay, stalk, rainfall and sunshine.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(0,1)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(0,3)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+ 
+
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>3. The Distilling</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>One of the dew houses to distill "on the less", a specific technique which requires keeping the yeast residue. </p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(0,2)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(0,4)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-4" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>4. The Ageing</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The ageing process takes a minimum of two and a half years.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(0,3)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(0,1)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- second bottle -->
+<div id="mainBottle__container-2">
+  <div class="square" id="square__bottle2">
+
+    <div id="bottleBase_loadercontainer1" class="bottleBase_loadercontainer1">
+    <div id="bottleButtonBase__loader-1" class="loaderBase">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="bottleBaseImg_loadercontainer2">
+    <img id="bottleBaseImg_loadercontainer2" src="assets/content/courvoisier-vsop-cognac.png">
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer1">
+    <div id="bottleButtonOption1__loader-1" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>V.S.O.P</h2>
+    </div>
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer2">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="trigContent2()" class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>X.O.</h2>
+    </div>
+  </div>
+
+    <div id="bottle1_loadercontainer1" class="bottle_loadercontainer1">
+    <div id="bottleButton1__loader-1" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="Courvoisier(1)" class="bottleButton__style-1">
+        <h2>The<br>Drink</h2>
+    </div>
+  </div>
+
+  <div id="bottle1_loadercontainer2" class="bottle_loadercontainer2">
+    <div id="bottleButton1__loader-2" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <div ontouchstart="Taste(1)" class="bottleButton__style-2">
+        <h2>The<br>Taste</h2>
+    </div>
+  </div>
+
+  <div id="bottle1_loadercontainer3" class="bottle_loadercontainer3">
+    <div id="bottleButton1__loader-3" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  <div ontouchstart="Artistry(1)" class="bottleButton__style-3">
+        <h2>The<br>Artistry</h2>
+    </div>
+  </div>
+  
+    <div id="bottleContent1__courvoisier-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+              <h2>Courvoisier V.S.O.P</h2>
+          </div>
+           <div class="content-img__bottle1" id="content-img1__bottle1">
+              <img src="assets/content/courvoisier-vsop-cognac.png">
+          </div>
+          <div class="content-detail__bottle1" id="content-detail1__bottle1">
+              <p>A delicate bouquet and excellent balance of oak and exotic flavours.</p>
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Drink</p>
+          </div>
+      </div>
+    </div>
+
+     <div id="bottleContent1__courvoisier-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+             <h2>Courvoisier V.S.O.P</h2>
+          </div>
+          <div class="content-img__bottle1-1">
+              <img src="assets/content/thetaste.png">
+          </div>
+          <div class="content-img2__bottle1">
+              <img src="assets/content/courvoisier_vsop.png">
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Taste</p>
+          </div>
+      </div>
+    </div>
+
+    <div  id="bottleContent1__courvoisier-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-detail__bottle1">
+          <h2>What's special about Courvoiser?</h2>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button id="content-main-button1__bottle1" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>1. The Barrels</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>Our barrels are made from 200-year-old oak trees to house the exquisite grapes.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(1,4)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(1,2)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+        
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>2. The Grapes</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The crus is selected for it's perfect combination of clay, stalk, rainfall and sunshine.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(1,1)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(1,3)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+ 
+
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>3. The Distilling</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>One of the dew houses to distill "on the less", a specific technique which requires keeping the yeast residue. </p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(1,2)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(1,4)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-4" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>4. The Ageing</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The ageing process takes a minimum of two and a half years.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(1,3)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(1,1)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>   
+
+<!-- third bottle -->
+<div id="mainBottle__container-3">
+  <div class="square" id="square__bottle3">
+
+    <div id="bottleBase_loadercontainer1" class="bottleBase_loadercontainer1">
+    <div id="bottleButtonBase__loader-1" class="loaderBase">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+    <div id="bottle_loadercontainer1" class="bottle_loadercontainer1">
+    <div id="bottleButton2__loader-2" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="Taste(2)" class="bottleButton__style-1">
+        <h2>The Taste</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer2" class="bottle_loadercontainer2">
+    <div id="bottleButton2__loader-3" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <div ontouchstart="Artistry(2)" class="bottleButton__style-2">
+        <h2>The Artistry</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer3" class="bottle_loadercontainer3">
+    <div id="bottleButton2__loader-1" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  <div ontouchstart="Courvoisier(2)" class="bottleButton__style-3">
+        <h2>The Drink</h2>
+    </div>
+  </div>
+  
+    <div id="bottleContent2__courvoisier-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+              <h2>Courvoisier X.O.</h2>
+          </div>
+           <div class="content-img__bottle1" id="content-img2__bottle1">
+              <img src="assets/content/courvoisier-xo-cognac.png">
+          </div>
+          <div class="content-detail__bottle1" id="content-detail2__bottle1">
+              <p>A very old blend of fine and well matured cognac, recognised as one of the finest.</p>
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Drink</p>
+          </div>
+      </div>
+    </div>
+
+     <div id="bottleContent2__courvoisier-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+             <h2>Courvoisier X.O.</h2>
+          </div>
+          <div class="content-img__bottle1-1">
+              <img src="assets/content/thetaste.png">
+          </div>
+          <div class="content-img2__bottle1">
+              <img src="assets/content/courvoisier_xo.png">
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Taste</p>
+          </div>
+      </div>
+    </div>
+
+    <div  id="bottleContent2__courvoisier-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-detail__bottle1">
+          <h2>What's special about Courvoiser?</h2>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button id="content-main-button2__bottle1" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="bottleContent2__courvoisier-3-1" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>1. The Barrels</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>Our barrels are made from 200-year-old oak trees to house the exquisite grapes.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(2,4)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(2,2)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+        
+      </div>
+    </div>
+
+    <div id="bottleContent2__courvoisier-3-2" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>2. The Grapes</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The crus is selected for it's perfect combination of clay, stalk, rainfall and sunshine.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(2,1)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(2,3)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+ 
+
+      </div>
+    </div>
+
+    <div id="bottleContent2__courvoisier-3-3" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>3. The Distilling</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>One of the dew houses to distill "on the less", a specific technique which requires keeping the yeast residue. </p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(2,2)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(2,4)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="bottleContent2__courvoisier-3-4" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>4. The Ageing</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The ageing process takes a minimum of two and a half years.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage(2,3)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage(2,1)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>     
+
+
+<!-- OPS First bottle -->
+<div id="mainBottle__container-1_OP">
+  <div class="square_OP" id="square__bottle1">
+
+    <div id="bottleBase_loadercontainer1_OP" class="bottleBase_loadercontainer1">
+    <div id="bottleButtonBase__loader-1_OP" class="loaderBase">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="bottleBaseImg_loadercontainer1">
+    <img id="bottleBaseImg_loadercontainer1_OP" src="assets/content/courvoisier-xo-cognac.png">
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer1">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div ontouchstart="trigContent_OP()" class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>V.S.O.P</h2>
+    </div>
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer2">
+    <div id="bottleButtonOption1__loader-2_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>X.O.</h2>
+    </div>
+  </div>
+
+
+
+    <div id="bottle_loadercontainer1_OP" class="bottle_loadercontainer1">
+    <div id="bottleButton__loader-1_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="Courvoisier_OP(0)" class="bottleButton__style-1">
+        <h2>The<br>Drink</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer2_OP" class="bottle_loadercontainer2">
+    <div id="bottleButton__loader-2_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <div ontouchstart="Taste_OP(0)" class="bottleButton__style-2">
+        <h2>The<br>Taste</h2>
+    </div>
+  </div>
+
+  <div id="bottle_loadercontainer3_OP" class="bottle_loadercontainer3">
+    <div id="bottleButton__loader-3_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  <div ontouchstart="Artistry_OP(0)" class="bottleButton__style-3">
+        <h2>The<br>Artistry</h2>
+    </div>
+  </div>
+  
+    <div id="bottleContent__courvoisier-1_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+              <h2>Courvoisier X.O.</h2>
+          </div>
+           <div class="content-img__bottle1" id="content-img__bottle1_OP">
+             <img src="assets/content/courvoisier-xo-cognac.png">
+          </div>
+          <div class="content-detail__bottle1" id="content-detail__bottle1_OP">
+             <p>A very old blend of fine and well matured cognac, recognised as one of the finest.</p>
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Drink</p>
+          </div>
+      </div>
+    </div>
+
+     <div id="bottleContent__courvoisier-2_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+             <h2>Courvoisier X.O.</h2>
+          </div>
+          <div class="content-img__bottle1-1">
+              <img src="assets/content/thetaste.png">
+          </div>
+          <div class="content-img2__bottle1">
+              <img src="assets/content/courvoisier_xo.png">
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Taste</p>
+          </div>
+      </div>
+    </div>
+
+    <div  id="bottleContent__courvoisier-3_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-detail__bottle1">
+          <h2>What's special about Courvoiser?</h2>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button id="content-main-button__bottle1_OP" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-1_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>1. The Barrels</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>Our barrels are made from 200-year-old oak trees to house the exquisite grapes.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(0,4)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(0,2)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+        
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-2_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>2. The Grapes</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The crus is selected for it's perfect combination of clay, stalk, rainfall and sunshine.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(0,1)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(0,3)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+ 
+
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-3_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>3. The Distilling</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>One of the dew houses to distill "on the less", a specific technique which requires keeping the yeast residue. </p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(0,2)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(0,4)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="bottleContent__courvoisier-3-4_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>4. The Ageing</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The ageing process takes a minimum of two and a half years.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(0,3)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(0,1)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPS second bottle -->
+<div id="mainBottle__container-2_OP">
+  <div class="square_OP" id="square__bottle2_OP">
+
+    <div id="bottleBase_loadercontainer1_OP" class="bottleBase_loadercontainer1">
+    <div id="bottleButtonBase__loader-1_OP" class="loaderBase">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="bottleBaseImg_loadercontainer2">
+    <img id="bottleBaseImg_loadercontainer2_OP" src="assets/content/courvoisier-vsop-cognac.png">
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer1">
+    <div id="bottleButtonOption1__loader-1_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>V.S.O.P</h2>
+    </div>
+  </div>
+
+  <div class="bottleBaseOption_loadercontainer2">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="trigContent2_OP()" class="bottleButtonOption__style-1">
+        <h2>Courvoisier<br>X.O.</h2>
+    </div>
+  </div>
+
+    <div id="bottle1_loadercontainer1_OP" class="bottle_loadercontainer1">
+    <div id="bottleButton1__loader-1_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  ontouchstart="Courvoisier_OP(1)" class="bottleButton__style-1">
+        <h2>The<br>Drink</h2>
+    </div>
+  </div>
+
+  <div id="bottle1_loadercontainer2_OP" class="bottle_loadercontainer2">
+    <div id="bottleButton1__loader-2_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <div ontouchstart="Taste_OP(1)" class="bottleButton__style-2">
+        <h2>The<br>Taste</h2>
+    </div>
+  </div>
+
+  <div id="bottle1_loadercontainer3_OP" class="bottle_loadercontainer3">
+    <div id="bottleButton1__loader-3_OP" class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  <div ontouchstart="Artistry_OP(1)" class="bottleButton__style-3">
+        <h2>The<br>Artistry</h2>
+    </div>
+  </div>
+  
+    <div id="bottleContent1__courvoisier-1_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+              <h2>Courvoisier V.S.O.P</h2>
+          </div>
+           <div class="content-img__bottle1" id="content-img1__bottle1_OP">
+              <img src="assets/content/courvoisier-vsop-cognac.png">
+          </div>
+          <div class="content-detail__bottle1" id="content-detail1__bottle1_OP">
+              <p>A delicate bouquet and excellent balance of oak and exotic flavours.</p>
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Drink</p>
+          </div>
+      </div>
+    </div>
+
+     <div id="bottleContent1__courvoisier-2_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-header__bottle1 content-header-pos__bottle1">
+             <h2>Courvoisier V.S.O.P</h2>
+          </div>
+          <div class="content-img__bottle1-1">
+              <img src="assets/content/thetaste.png">
+          </div>
+          <div class="content-img2__bottle1">
+              <img src="assets/content/courvoisier_vsop.png">
+          </div>
+          <div class="content-body__bottle1">
+              <p>The Taste</p>
+          </div>
+      </div>
+    </div>
+
+    <div  id="bottleContent1__courvoisier-3_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+          <div class="content-detail__bottle1">
+          <h2>What's special about Courvoiser?</h2>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button id="content-main-button1__bottle1_OP" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-1_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>1. The Barrels</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>Our barrels are made from 200-year-old oak trees to house the exquisite grapes.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(1,4)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(1,2)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+        
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-2_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>2. The Grapes</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The crus is selected for it's perfect combination of clay, stalk, rainfall and sunshine.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(1,1)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(1,3)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+ 
+
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-3_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>3. The Distilling</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>One of the dew houses to distill "on the less", a specific technique which requires keeping the yeast residue. </p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(1,2)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(1,4)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div id="bottleContent1__courvoisier-3-4_OP" class="bottleContent__loaderContainer-1">
+      <div class="bottleContent__square-1">
+        <div class="bottleContent__loader-1 bottleContent__loaderBackground-3-4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+         <div class="content-header__bottle1 content-header-pos__inner">
+             <h3>4. The Ageing</h3>
+          </div>
+          <div class="content-detail__bottle1">
+          <p>The ageing process takes a minimum of two and a half years.</p>
+        </div>
+        <div class="content-button__bottle1 content-button-left__bottle1">
+          <button ontouchstart="prevPage_OP(1,3)" class="content-button__inner"><i class="fas fa-chevron-left content-icon-left__bottle1"></i></button>
+        </div>
+        <div class="content-button__bottle1 content-button-right__bottle1">
+          <button ontouchstart="nextPage_OP(1,1)" class="content-button__inner"><i class="fas fa-chevron-right content-icon-right__bottle1"></i></button>
+        </div>
+        <div class="content-body__bottle1">
+              <p>The Artistry</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ </div>
+  
+  <!-- <div id="resultBox">
+    <table>
+      <thead>
+        <tr>
+          <th id="detect-0-head">#1</th>
+          <th id="detect-1-head">#2</th>
+          <th id="detect-2-head">#3</th>
+          <th id="detect-3-head">#4</th>
+          <th id="detect-4-head">#5</th>
+          <th id="detect-5-head">#6</th>
+          <th id="detect-6-head">#7</th>
+          <th id="detect-7-head">#8</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="detect-0"></td>
+          <td id="detect-1"></td>
+          <td id="detect-2"></td>
+          <td id="detect-3"></td>
+          <td id="detect-4"></td>
+          <td id="detect-5"></td>
+          <td id="detect-6"></td>
+          <td id="detect-7"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+<script type="text/javascript" src="js/touchbox.js"></script>
+<script type="text/javascript" src="js/dicegame.js"></script>
+<script type="text/javascript" src="js/flipgame.js"></script>
+<script type="text/javascript" src="js/tapgame.js"></script>
+<script type="text/javascript" src="js/gamemenu.js"></script>
+<!-- <script type="text/javascript" src="js/pitchjs.js"></script> -->
+<script type="text/javascript" src="js/contents.js"></script>
+<script type="text/javascript" src="js/contentsOPS.js"></script>
+<script type="text/javascript" src="js/mainscreen.js"></script>
+
+
+</body>
+</html>

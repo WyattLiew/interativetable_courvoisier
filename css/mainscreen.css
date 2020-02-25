@@ -1,0 +1,72 @@
+.mainscreen__logotext {
+          margin: 0;
+    font-family: Montserrat;
+    font-size: 40px;
+    color: var(--white);
+    letter-spacing: 0.7em;
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    align-items: center;
+    top: 47%;
+    width: auto;
+    z-index: 10;
+    --white: #f1f1f1;
+    left: 26%;
+    position: absolute;
+    }
+
+    #I {
+  opacity: 1;
+  animation: flickerI 2s linear  reverse infinite;
+}
+#I::after {
+  content: '';
+  width: 150%;
+  -webkit-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+  -moz-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+  box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+}
+@keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

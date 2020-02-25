@@ -1,0 +1,789 @@
+ Dice Game css here*/
+.game__table-box {
+      margin: 50px auto;
+    }
+
+    .game__table-row {
+      display: table;
+      width: 80%;
+      /*margin: 10px auto;*/
+      font-family: sans-serif;
+      background: transparent;
+      color: white;
+      font-size: 8px;
+      /*box-shadow: 0 1px 4px 0 rgba(0,0,50,0.3);*/
+    }
+    
+    .game__table-cell {
+      display: table-cell;
+      text-align: center;
+      padding: 4px 0;
+      /*border:2px solid white;*/
+      vertical-align: middle;
+    }
+
+    .game__table-cell-width {
+      width: 20%;
+    }
+
+
+    .game__container {
+      position: relative;
+    }
+
+    #dicegame__container {
+      display: none;
+    }
+
+    .game__wrapper {
+      width: 500px;
+      position: absolute;
+      top: 285px;
+      left: 15%;
+      transform: translate(-25%, -5%);
+      overflow: hidden;
+    }
+
+    .game__wrapper-2 {
+      width: 500px;
+      position: absolute;
+      top: 285px;
+      right: 20%;
+      transform: rotate(180deg);
+      overflow: hidden;
+    }
+
+    /*.gameButton__wrapper-2 button{
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      left: 38%;
+      top: 95px;
+      transform: rotate(180deg);
+      color: white;
+      background: none;
+      border: 2px solid white;
+      border-radius: 13px;
+      font-family: Lato;
+      font-size: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 300;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .gameButton__wrapper button {
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      left: 44%;
+      transform: translateX(-50%);
+      color: white;
+      background: none;
+      border: 2px solid white;
+      border-radius: 13px;
+      font-family: Lato;
+      font-size: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 300;
+      transition: background-color 0.3s, color 0.3s;
+    }*/
+
+    .gameButton__wrapper-2 a{
+      position: absolute;
+      left: 36%;
+      top: 85px;
+      transform: rotate(180deg);
+      color: white;
+      font-family: Lato;
+      font-size: 20px;
+      text-transform: uppercase;
+      padding: 30px 60px;
+      text-decoration: none;
+      box-shadow: 0 20px 50px rgba(0,0,0,.5);
+      overflow: hidden;
+    }
+
+    .gameButton__wrapper-2 a:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .gameButton__wrapper a {
+      position: absolute;
+      left: 43%;
+      top: 735px;
+      transform: translateX(-50%);
+      color: white;
+      font-family: Lato;
+      font-size: 20px;
+      text-transform: uppercase;
+      padding: 30px 60px;
+      text-decoration: none;
+      box-shadow: 0 20px 50px rgba(0,0,0,.5);
+      overflow: hidden;
+    }
+
+    .gameButton__wrapper a:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      width: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .gameButton__wrapper a span:nth-child(1),
+    .gameButton__wrapper-2 a span:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #002b2b,#17ffff);
+      animation: diceButton1 2s linear infinite;
+    }
+
+    @keyframes diceButton1 {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .gameButton__wrapper a span:nth-child(2),
+    .gameButton__wrapper-2 a span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      /*background: linear-gradient(to bottom, #0c002b,#1779ff);*/
+      background: linear-gradient(to bottom,#002b2b,#17ffff);
+      animation: diceButton2 2s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes diceButton2 {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    .gameButton__wrapper a span:nth-child(3),
+    .gameButton__wrapper-2 a span:nth-child(3) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      /*background: linear-gradient(to left, #0c002b,#1779ff);*/
+      background: linear-gradient(to left, #002b2b,#17ffff);
+      animation: diceButton3 2s linear infinite;
+    }
+
+    @keyframes diceButton3 {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .gameButton__wrapper a span:nth-child(4),
+    .gameButton__wrapper-2 a span:nth-child(4) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      /*background: linear-gradient(to top, #0c002b,#1779ff);*/
+      background: linear-gradient(to top, #002b2b,#17ffff);
+      animation: diceButton4 2s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes diceButton4 {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+     .gameButton__wrapper i {
+        color: #eb4d4d;
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 32px;
+        line-height: 1;
+        vertical-align: text-top;
+        margin-top: -4px;
+        transition: margin 0.3s;
+      }
+
+      .btn-roll {
+        top: 690px;
+        position: absolute;
+        /*width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #555;
+        background: none;
+        border: none;
+        font-family: Lato;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 300;
+        transition: background-color 0.3s, color 0.3s;*/
+        }
+
+        /*.btn-roll-icon i {
+          position: relative;
+          top: 6px;
+          color: white;
+          font-size: 20px;
+        }
+
+        .btn-roll-icon-2 i {
+          position: relative;
+          top: 0px;
+          right: 6px;
+          color: white;
+          font-size: 20px;
+        }*/
+
+
+
+      .dice {
+      position: absolute;
+      left: 43%;
+      top: 365px;
+      transform: translateX(-50%);
+      border-radius: 5%;
+      height: 170px;
+      box-shadow: 0px 10px 60px rgba(15,252, 252, 0.33);
+      }
+
+      
+
+      @keyframes blinking {
+        0% {
+          background: #2F605D;
+        }
+        20% {
+          background: transparent;
+        }
+
+        40% {
+          background: #2F605D;
+        }
+        60% {
+          background: transparent;
+        }
+
+        80% {
+          background: #2F605D;
+        }
+
+      }
+
+.popup {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
+}
+
+
+      /* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom:62px;
+  left: -70%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  margin-left: 80px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  font-size: 0.8rem;
+  border: 2px solid white;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {visibility: hidden ;}
+}
+
+/* Dice game css end*/
+
+/* Flip game css here*/
+
+#flipgame__container {
+  display: none;
+}
+
+#flipgame__video {
+      width: 600px;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    border: 1px solid floralwhite;
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0px 0px 4px 1px white;
+}
+
+#flipgame_start {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(4, 4, 4);
+    border-style: dotted;
+    color: #555555;
+    font-size: 1rem;
+    animation:buttonOutline2 1s linear infinite;
+}
+
+.flipgame__container {
+  position: relative;
+}
+
+.flipgame__wrapper {
+  position: absolute;
+  transform: translate(12%,15%);
+  overflow: hidden;
+}
+
+div#flip_board{
+  /*background:#CCC;*/
+  /*border:#999 1px solid;*/
+  width:1200px;
+  height:700px;
+  padding:24px;
+  margin:0px auto;
+}
+/*div#flip_board > div*/
+.flipgame__bottle{
+  background: url(../assets/games/flip/courvoisier-1.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  /*border:#000 1px solid;*/
+  width:170px;
+  height:180px;
+  float:left;
+  margin:10px;
+  padding:20px;
+  font-size:64px;
+  text-align:center;
+}
+
+.flipgame__tile {
+      
+    border-radius: 17px;
+    box-shadow: 0px 10px 3px -4px #d04900;
+    color: white;
+    font-size: 20px;
+    padding: 106px 8px 8px 8px;
+    height: 150px;
+    text-transform: uppercase;
+}
+
+.flipgame__tile2 {
+    
+    border-radius: 17px;
+    box-shadow: 0px 10px 3px -4px #b5a178;
+    color: white;
+    font-size: 20px;
+    padding: 106px 8px 8px 8px;
+    height: 150px;
+    text-transform: uppercase;
+}
+
+.flipgame__tileImg{
+        width: 60px;
+    position: relative;
+    bottom: 140px;
+    left: 8px;
+}
+
+
+/* Flip game css end*/
+
+/* Tap game css start here*/
+
+#tapgame__container {
+  display: none;
+}
+
+#tapgame__section {
+  position: absolute;
+  width: 100%;
+  height: 16vh;
+  background:black;
+  overflow: hidden;
+  bottom: 0px;
+}
+
+#tapgame__section .wave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background:url(../assets/games/tap/wave2.png);
+  background-size: 1500px 100px;
+}
+
+#tapgame__section .wave.wave1 {
+  animation: wave_bg 5s linear infinite;
+  z-index: 100px;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+#tapgame__section .wave.wave2 {
+  animation: wave2_bg 10s linear infinite;
+  z-index: 99px;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+#tapgame__section .wave.wave3 {
+  animation: wave_bg 5s linear infinite;
+  z-index: 98px;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+
+#tapgame__section .wave.wave4 {
+  animation: wave2_bg 10s linear infinite;
+  z-index: 97px;
+  opacity: 0.7;
+  animation-delay: -7s;
+  bottom: 20px;
+}
+
+@keyframes wave_bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1500px;
+  }
+}
+
+@keyframes wave2_bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1500px;
+  }
+}
+
+#playerA_board {
+  /*background: url(../assets/games/tap/wave.png);*/
+  background: linear-gradient(30deg,rgba(15,252,252,5) 25%,transparent 25%, transparent 50%,rgba(15,252,252,5) 50%,rgba(15,252,252,5) 75%, transparent 75%, transparent);
+   background-size: 35px;
+    border: rgb(15,252,252) 1px solid;
+    border-radius: 2px;
+    width: 38%;
+    position: absolute;
+    float: left;
+    padding: 10px;
+    margin: 0px auto;
+    /*top: 200px;*/
+    top: 210px;
+    left: 100px;
+
+    animation: move 3s linear infinite;
+}
+
+/*#playerA_board {
+  background: url(../assets/games/tap/wave.png);
+    /*background-size: contain;*/
+   /* width: 100%;
+    height: 22px;
+    padding: 6px;
+    margin: 0px auto;*/
+    /*top: 200px;*/
+    
+    /*animation: move 0.5s linear infinite;*/
+/*}*/
+
+@keyframes move {
+  /*0%{
+    background-position-x: 0;
+     background-position-y: -22px;
+  }
+  100% {
+    background-position-x: 118px;
+     background-position-y: -22px;
+  }*/
+
+  100% {
+    background-position: 200px 0px;
+  }
+}
+
+@keyframes playerB_Move {
+  100% {
+    background-position: 200px 0px;
+  }
+}
+
+#playerB_board {
+    /*background: red;*/
+    background: linear-gradient(30deg,rgba(202,45,5,5) 25%,transparent 25%, transparent 50%,rgba(202,45,5,5) 50%,rgba(202,45,5,5) 75%, transparent 75%, transparent);
+   background-size: 35px;
+    border: #ca2d05 1px solid;
+    border-radius: 2px;
+    width: 38%;
+    position: absolute;
+    float: right;
+    padding: 10px;
+    margin: 0px auto;
+    /*top: 200px;*/
+    top: 210px;
+    right: 285px;
+    animation: playerB_Move 3s linear reverse infinite;
+}
+
+.playerA_icon {
+  position: absolute;
+  bottom: 9px;
+  right:1px;
+}
+
+.playerA_icon img{
+  width: 100px;
+}
+
+.playerA__name{
+  position: absolute;
+  top: 15%;
+  left: 6%;
+}
+
+.playerA__name h2 {
+  color: white;
+
+}
+
+.playerB__name{
+  position: absolute;
+  top: 15%;
+  right: 18%;
+}
+
+.playerB__name h2 {
+  color: white;
+  
+}
+
+.tapgame__guide {
+  position: absolute;
+  top: 40%;
+  left: 28%;
+}
+
+.tapgame__guide h1 {
+  color: white;
+  text-align: center;
+}
+
+.buttonStart__board,
+.buttonPlayAgain__board {
+  position: absolute;
+  top: 75%;
+  left: 40%;
+}
+
+.buttonA__board {
+  position: absolute;
+  top: 60%;
+  left: 21%;
+}
+.buttonB__board {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+}
+
+#playerA_button {
+  width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: rgb(4, 4, 4);
+    border-style: dotted;
+    border-color: #f5f5f5;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #555;
+    animation: buttonOutline 1s linear infinite;
+     display: none; 
+}
+#playerB_button {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background: rgb(4, 4, 4);
+    border-style: dotted;
+    border-color: #f5f5f5;
+  font-size: 1.3rem;
+  color: #555;
+    text-transform: uppercase;
+  animation:buttonOutline1 1s linear infinite;
+  display: none;
+
+}
+
+@keyframes buttonOutline {
+  0% {
+    box-shadow: 0px 0px 20px 10px #f5f5f5;
+}
+50% {
+    box-shadow: 0px 0px 1px 6px rgba(15, 252, 252, 1);
+}
+100% {
+    box-shadow: 0px 0px 0px 5px rgba(15, 252, 252, 1);
+}
+}
+
+@keyframes buttonOutline1 {
+0% {
+    box-shadow: 0px 0px 20px 10px #ca2d05;
+}
+
+50% {
+    box-shadow: 0px 0px 1px 6px #ca2d05;
+}
+100% {
+    box-shadow: 0px 0px 0px 5px #ca2d05;
+}
+}
+
+@keyframes buttonOutline2 {
+0% {
+    box-shadow: 0px 0px 20px 10px #eee;
+}
+
+50% {
+    box-shadow: 0px 0px 1px 6px #f5f5f5;
+}
+100% {
+    box-shadow: 0px 0px 0px 5px #555;
+}
+}
+
+#tapgame_start {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(4, 4, 4);
+    border-style: dotted;
+    color: #555555;
+    font-size: 1rem;
+    animation:buttonOutline2 1s linear infinite;
+}
+
+#tapgame_playagain {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(4, 4, 4);
+    border-style: dotted;
+    color: #555555;
+    font-size: 1rem;
+    animation:buttonOutline2 1s linear infinite;
+  display: none;
+}
+
+.tapgame_mode {
+  position: relative;
+}
+
+#tapgame__timeMode {
+  position: absolute;
+  top: 300px;
+  left: 620px;
+  display: none;
+}
+
+#tapgame__time {
+  color: white;
+  font-size: 4.2rem;
+}
+
+#tapgame__readytimeMode {
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  display: none;
+}
+
+#tapgame__readytime {
+  color: white;
+  font-size: 6rem;
+}
+
+#tapgame__resultMode {
+  position: absolute;
+  top: 320px;
+  left: 500px;
+  display: none;
+}
+
+#tapgame__result {
+  color: white;
+  font-size: 4.3rem;
+}
+
+/* Tap game css end
