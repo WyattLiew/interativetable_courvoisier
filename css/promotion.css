@@ -7,30 +7,28 @@
 }
 
 .promotionHeader__wrapper {
-	width: 40%;
-	height: 650px;
+	width: 650px;
+	height: 810px;
 	position: absolute;
-	top: 63px;
+	top: -35px;
 	left: 10%;
 	transform: translate(-10%, 11%);
 	overflow: hidden;
-	background:white;
 }
 
 .promotionBody__wrapper {
-	width: 30%;
+	width: 550px;
 	position: absolute;
 	top: 133px;
 	left: 50%;
 	overflow: hidden;
-	background:white;
-	height: 650px;
+	height: 687px;
 }
 
 .promotion__header img{
-	/*width: 700px;*/
+	width: 650px;
 }
 
 .promotion__body img{
-	/*width: 700px;*/
+	width: 550px;
 }

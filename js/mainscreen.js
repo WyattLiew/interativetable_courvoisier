@@ -1,3 +1,85 @@
+var trigMainscreen__explore = document.getElementById('btn-toexplore');
+var mainscreen__loader = document.getElementById('mainscreen__loader');
+var mainscreen__logotext = document.getElementById('mainscreen__logotext');
+var menu__explore = document.getElementById('menu__explore');
+var menu__game = document.getElementById('menu__game');
+var menu__promotion = document.getElementById('menu__promotion');
+var logo = document.getElementById('logo');
+
+
+// to explore page
+trigMainscreen__explore.addEventListener('touchstart', function(e){
+      trigMenu();
+    });
+
+function trigMenu() {
+trigMainscreen__explore.style.display = `none`;
+trigMainscreen__explore.style.opacity= `0`;
+mainscreen__loader.style.display = `block`;
+mainscreen__logotext.style.transition = `2s`;
+ setTimeout(function(){
+        mainscreen__logotext.style.opacity= `0`;
+}, 600);
+ setTimeout(function(){
+        mainscreen__loader.style.transition = `2s`;
+        mainscreen__loader.style.opacity = `0`;
+}, 1500);
+  setTimeout(function(){
+        if(isContentActive!=1){
+  explore__container.style.display = "block";
+  mainsceen__fireworks.style.display = `none`;
+  menu__gamelist.style.display = `none`;
+  tapgame__container.style.display = "none";
+  dicegame__container.style.display = "none";
+  flipgame__container.style.display = "none";
+  promotion__container.style.display = "none";
+  resetExplore();
+  resetExploreOPS();
+  // game__popup.classList.remove("show");
+
+  var video = document.getElementById('video');
+            video.style.display = "none";
+}
+}, 2500);
+
+    setTimeout(function(){
+        exploreHeader.style.transition = `2s`;
+        exploreBody.style.transition = `5s`;
+        exploreHeader.style.opacity = `1`;
+        exploreBody.style.opacity = `1`;
+}, 2800);
+
+setTimeout(function(){
+    explore_button1.style.transition = `2s`;
+   explore_button2.style.transition = `2s`;
+    explore_button1.style.opacity = `1`;
+    explore_button2.style.opacity = `1`;
+    mainBottle__container1.style.transition = `2s`;
+   mainBottle__container2.style.transition = `2s`;
+    mainBottle__container1.style.opacity = `1`;
+    mainBottle__container2.style.opacity = `1`;
+    mainBottle__container1_OP.style.transition = `2s`;
+   mainBottle__container2_OP.style.transition = `2s`;
+    mainBottle__container1_OP.style.opacity = `1`;
+    mainBottle__container2_OP.style.opacity = `1`;
+}, 3500);
+
+setTimeout(function(){
+     menu__explore.style.display =`block`;
+    menu__game.style.display =`block`;
+    menu__promotion.style.display =`block`;
+    logo.style.display =`block`;
+    menu__explore.style.transition =`2s`;
+    menu__game.style.transition =`2s`;
+    menu__promotion.style.transition =`2s`;
+    logo.style.transition =`2s`;
+    menu__explore.style.animation = `menuRightToLeft 1.5s ease 1`;
+    menu__game.style.animation = `menuRightToLeft 2s ease 1`;
+    menu__promotion.style.animation = `menuRightToLeft 2.5s ease 1`;
+    logo.style.animation = `menuRightToLeft 1.2s ease 1`;
+}, 3500);
+}
+
 (function(w) {
 
     var canvas, ctx;

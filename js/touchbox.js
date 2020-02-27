@@ -81,7 +81,28 @@
         isContentActive = 0;
         game__popup.classList.remove("show");
         window.human = false;
-        autoClick();
+        
+        trigMainscreen__explore.style.display = `block`;
+        mainscreen__loader.style.opacity = `1`;
+        mainscreen__loader.style.display = `none`;
+
+        mainscreen__logotext.style.transition = `1s`;
+        trigMainscreen__explore.style.transition = `1s`;
+        mainscreen__logotext.style.opacity= `1`;
+        trigMainscreen__explore.style.opacity =`1`;
+        menu__explore.style.animation = `menuLeftToRight 1.3s ease 1`;
+        menu__game.style.animation = `menuLeftToRight 1.1s ease 1`;
+        menu__promotion.style.animation = `menuLeftToRight 1s ease 1`;
+        logo.style.animation = `menuLeftToRight 1.5s ease 1`;
+
+        menu__explore.style.transition =`2s`;
+        menu__game.style.transition =`2s`;
+        menu__promotion.style.transition =`2s`;
+        logo.style.transition =`2s`;
+        menu__explore.style.display =`none`;
+        menu__game.style.display =`none`;
+        menu__promotion.style.display =`none`;
+        logo.style.display =`none`;
     }
      
    function resetTimer() { 

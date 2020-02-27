@@ -96,12 +96,13 @@
           </div>
           </div>
 
-<div class="logo">
+<div class="logo" id="logo">
   <img ontouchstart="toScreenSaver()" class="logo_img" src="assets/couvoisierlogo.png"></button>
 </div>
 
+<!-- Main screen saver -->
 <div id="mainsceen__fireworks">
-<div class="mainscreen__logotext">
+<div class="mainscreen__logotext" id="mainscreen__logotext">
   <span id="I">C</span>
   <span id="I">O</span>
   <span id="I">U</span>
@@ -115,38 +116,87 @@
   <span id="I">R</span>
 </div>
 <canvas id="c"></canvas>
+ <div class="mainscreen__wrapper">
+    <a href="#" class="btn-toexplore" id="btn-toexplore">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Click to Explore
+    </a>
+  </div>
+  <div class="mainscreen__loader" id="mainscreen__loader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="warning">
+  <div class="warning__container">
+    <p class="warning__container__text">
+      Customers, 
+    </p>
+    
+    <ul class="warning__container__list">
+      <li class="warning__container__list__item">be it drunk or not drunk,</li>
+      <li class="warning__container__list__item">are liable for all Club Illusion's properties.</li>
+      <li class="warning__container__list__item">be it drunk or not drunk,</li>
+      <li class="warning__container__list__item">are liable for all Club Illusion's properties.</li>
+    </ul>
+  </div>
+</div>
 </div>
 
 <!-- explore button -->
-<div class="menu__explore">
+<div class="menu__explore" id="menu__explore">
   <button id="trig-menu__explore" class="popup"><img class="menuImg__explore" src="assets/main/menuexplore.png"></button>
   <h2>Explore</h2>
 </div>
 
 <!-- Game button -->
-<div class="menu__game">
+<div class="menu__game" id="menu__game">
   <button id="trig-menu__game" class="popup"><img class="menuImg__games" src="assets/main/menudice.png"><span class="popuptext" id="game__Popup">Kindly place back the coasters to play the game.</span></button>
   <h2>Games</h2>
 </div>
 
 <!-- Promotion button -->
-<div class="menu__promotion">
+<div class="menu__promotion" id="menu__promotion">
   <button id="trig-menu__promotion" class="popup"><img class="menuImg__promotion" src="assets/main/promotion.png"></button>
   <h2>Promotion</h2>
 </div>
 
 <!-- Game list -->
 <div id="menu__gamelist">
+  <div class="gamelist__wrapper" id="gamelist__wrapper">
+    <div class="gamelist__body">
+      <p>Welcome to Courvoisier Game experience!<br>Select any game to start playing!</p>
+    </div>
+  </div>
 <!-- Game1 button -->
 <div class="menu__game1">
-  <button id="trig-menu__game1" class="popup"><img class="menuImg__dice" src="assets/main/menudice.png"></button>
-  <h2>Dice Game</h2>
+  <button id="trig-menu__game1" class="popup gamebutton__box"><!--  <img class="menuImg__dice" src="assets/main/menudice.png"> -->
+    <div class="menuImg__dice"></div>
+  </button>
+  <h2>King of Dice</h2>
 </div>
 
 <!-- Game2 button -->
 <div class="menu__game2">
-  <button id="trig-menu__game2" class="popup"><img class="menuImg__flip" src="assets/main/FlipCourvoisier.png"></button>
-  <h2>Flip Courvoisier</h2>
+  <button id="trig-menu__game2" class="popup gamebutton__box"><!-- <img class="menuImg__flip" src="assets/main/FlipCourvoisier.png"> -->
+    <div class="menuImg__flip"></div>
+  </button>
+  <h2>Flip to Drink</h2>
 </div>
 
 <!-- Game3 button -->
@@ -167,7 +217,7 @@
   </div>
   <div class="exploreBody__wrapper" id="exploreBody__wrapper">
     <div class="explore__body">
-      <p>Welcome to Courvoisier interative experience!<br>To explore, feel free to touch the screen to explore more.</p>
+      <p>Welcome to Courvoisier interactive experience!<br>To explore, feel free to touch the screen to explore more.</p>
     </div>
   </div>
 
@@ -186,12 +236,12 @@
 <div class="promotion__container" id="promotion__container">
   <div class="promotionHeader__wrapper" >
     <div class="promotion__header"> 
-      <img src="assets/couvoisierlogo1.png">
+      <img src="assets/promotion/Cvs_illusion.jpeg">
     </div>
   </div>
   <div class="promotionBody__wrapper">
     <div class="promotion__body">
-      <img src="assets/couvoisierlogo1.png">
+      <img src="assets/promotion/Cvs_illusion2.jpeg">
     </div>
   </div>
 
@@ -500,7 +550,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -759,7 +809,7 @@
              <h2>Courvoisier V.S.O.P</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_vsop.png">
@@ -990,7 +1040,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -1252,7 +1302,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -1511,7 +1561,7 @@
              <h2>Courvoisier V.S.O.P</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_vsop.png">

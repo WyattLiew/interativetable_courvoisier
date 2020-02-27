@@ -12,7 +12,7 @@
 
     body {
       margin: 0;
-      background: url(../assets/Club_illusion_interactivetable_bg.jpg);
+      background: url(../assets/Club_illusion_interactivetable_mainbg.png);
       background-size: cover;
       /*padding: 20px;*/
     }
@@ -119,6 +119,32 @@
       top: 290px;
       z-index: 101;
     }
+    
+    .menu__explore,
+    .menu__game,
+    .menu__promotion,
+    .logo {
+      display: none;
+    }
+
+    @keyframes menuRightToLeft {
+      from {
+        transform:translate(200px, 10px);
+      }
+      to {
+        transform:"";
+      }
+    }
+
+    @keyframes menuLeftToRight {
+      from {
+        transform:'';
+      }
+      to {
+        transform:translate(200px, 10px);
+      }
+    }
+
 
     .menuImg__explore,
     .menuImg__games,
@@ -143,19 +169,41 @@
 
     .menu__explore h2,
     .menu__promotion h2,
-    .menu__game h2,
-    .menu__game1 h2,
-    .menu__game2 h2,
-    .menu__game3 h2{
+    .menu__game h2{
       color: white;
       text-align: center;
       margin: 0;
       font-size: 1.2rem;
     }
 
+    .menu__game1 h2,
+    .menu__game2 h2,
+    .menu__game3 h2 {
+      color: white;
+      text-align: center;
+      margin: 0;
+      margin-top: 10px;
+      font-size: 1.6rem;
+    }
+
     #menu__gamelist {
       display: none;
     }
+
+      .gamelist__wrapper {
+  width: 1000px;
+  position: absolute;
+  top: 450px;
+  left: 18%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.gamelist__body p{
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+}
 
     .menu__game1{
       position: absolute;
@@ -178,10 +226,52 @@
       z-index: 101;
     }
     
-    .menuImg__dice,
+   /* .menuImg__dice,
     .menuImg__flip,
     .menuImg__tap{
       width: 120px;
+    }*/
+
+    .gamebutton__box {
+      height: 180px;
+    }
+
+    .menuImg__dice {
+      height: 165px;
+      width: 128px;
+      animation:gamelistDice 2s linear infinite;
+    }
+
+    .menuImg__flip {
+      height: 165px;
+      width: 128px;
+      animation:gamelistFlip 2s linear infinite;
+    }
+    
+    @keyframes gamelistDice {
+      from {
+        background: url('../assets/games/gamelist/dice1.png');
+        background-size: cover;
+        background-position: center;
+      } 
+      to {
+        background: url('../assets/games/gamelist/dice2.png');
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    @keyframes gamelistFlip {
+      from {
+        background: url('../assets/games/gamelist/Cvs_flip.png');
+        background-size: cover;
+        background-position: center;
+      } 
+      to {
+        background: url('../assets/games/gamelist/Cvs_flip2.png');
+        background-size: cover;
+        background-position: center;
+      }
     }
 
 
@@ -298,7 +388,7 @@
     }
 
     .bottleContent__loaderBackground-3:after {
-      background-image: url(../assets/images/select-artistry.jpg);
+      background-image: url(../assets/images/bgcv-select-artistry.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -307,7 +397,7 @@
     }
 
     .bottleContent__loaderBackground-3-1:after {
-      background-image: url(../assets/images/bg-proudly.jpg);
+      background-image: url(../assets/images/bgcv-proudly.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -316,7 +406,7 @@
     }
 
     .bottleContent__loaderBackground-3-2:after {
-      background-image: url(../assets/images/bg-growing.jpg);
+      background-image: url(../assets/images/bgcv-growing.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -325,7 +415,7 @@
     }
 
     .bottleContent__loaderBackground-3-3:after {
-      background-image: url(../assets/images/bg-distilling.jpg);
+      background-image: url(../assets/images/bgcv-distilling.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -334,7 +424,7 @@
     }
 
     .bottleContent__loaderBackground-3-4:after {
-      background-image: url(../assets/images/bg-ageing.jpg);
+      background-image: url(../assets/images/bgcv-ageing.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -527,11 +617,11 @@
       padding: 40px 60px;
       transition: 0.5s;
       z-index: 99;
-      bottom: 5px;
+      bottom: -25px;
     }
 
     .content-img__bottle1-1 img {
-      opacity: 0.3;
+      opacity: 0.5;
     }
 
     .content-img2__bottle1 {
@@ -551,7 +641,7 @@
     }
 
     .content-img__bottle1-1 img{
-      height: 14rem;
+      height: 25rem;
     }
 
     .content-detail__bottle1 {

@@ -11,16 +11,18 @@
 	position: absolute;
 	top: 235px;
 	left: 28%;
-	transform: translate(-10%, 11%);
+	/*transform: translate(-10%, 11%);*/
 	overflow: hidden;
+	opacity: 0;
 }
 
 .exploreBody__wrapper {
 	width: 1000px;
 	position: absolute;
-	top: 470px;
-	left: 12%;
+	top: 450px;
+	left: 18%;
 	overflow: hidden;
+	opacity: 0;
 }
 
 .explore__header img{
@@ -31,6 +33,11 @@
 	color: white;
 	text-align: center;
 	font-size: 1.7rem;
+}
+
+#explore_button1,
+#explore_button2 {
+	opacity: 0;
 }
 
 .explore__animate {
@@ -107,3 +114,15 @@
     transform: scale3d(1.5,1.5,1);
   }
 }
+
+@keyframes exploreHeaderAnimate {
+	from {
+		opacity: 0;
+    transform: scale(0);
+  }
+  to {
+  	opacity: 1;
+    transform: scale(1);
+  }
+}
+

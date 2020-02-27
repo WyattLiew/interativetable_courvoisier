@@ -16,13 +16,67 @@
 
 // Menu logo to screen saver
 function toScreenSaver() {
-  explore__container.style.display = "none";
-  mainsceen__fireworks.style.display = `block`;
   menu__gamelist.style.display = `none`;
   tapgame__container.style.display = "none";
   dicegame__container.style.display = "none";
   flipgame__container.style.display = "none";
   promotion__container.style.display = "none";
+
+  setTimeout(function(){
+    explore__container.style.display = "none";
+        mainsceen__fireworks.style.display = `block`;
+}, 2500);
+
+  trigMainscreen__explore.style.display = `block`;
+  mainscreen__loader.style.opacity = `1`;
+  mainscreen__loader.style.display = `none`;
+
+ setTimeout(function(){
+   mainscreen__logotext.style.transition = `3s`;
+  trigMainscreen__explore.style.transition = `2s`;
+        mainscreen__logotext.style.opacity= `1`;
+        trigMainscreen__explore.style.opacity =`1`;
+}, 3500);
+
+ setTimeout(function(){
+        exploreHeader.style.transition = `2s`;
+        exploreBody.style.transition = `3s`;
+        exploreHeader.style.opacity = `0`;
+        exploreBody.style.opacity = `0`;
+}, 1000);
+
+setTimeout(function(){
+    explore_button1.style.transition = `2s`;
+   explore_button2.style.transition = `2s`;
+    explore_button1.style.opacity = `0`;
+    explore_button2.style.opacity = `0`;
+    mainBottle__container1.style.transition = `2s`;
+   mainBottle__container2.style.transition = `2s`;
+    mainBottle__container1.style.opacity = `0`;
+    mainBottle__container2.style.opacity = `0`;
+    mainBottle__container1_OP.style.transition = `2s`;
+   mainBottle__container2_OP.style.transition = `2s`;
+    mainBottle__container1_OP.style.opacity = `0`;
+    mainBottle__container2_OP.style.opacity = `0`;
+}, 600);
+setTimeout(function(){
+    menu__explore.style.animation = `menuLeftToRight 1.3s ease 1`;
+    menu__game.style.animation = `menuLeftToRight 1.1s ease 1`;
+    menu__promotion.style.animation = `menuLeftToRight 1s ease 1`;
+    logo.style.animation = `menuLeftToRight 1.5s ease 1`;
+}, 600);
+
+setTimeout(function(){
+    menu__explore.style.transition =`2s`;
+    menu__game.style.transition =`2s`;
+    menu__promotion.style.transition =`2s`;
+    logo.style.transition =`2s`;
+    menu__explore.style.display =`none`;
+    menu__game.style.display =`none`;
+    menu__promotion.style.display =`none`;
+    logo.style.display =`none`;
+}, 1500);
+
 }
 
 // Menu explore
@@ -35,6 +89,21 @@ trigMenu__explore.addEventListener('touchstart', function(e){
 function trigExplore()
 {
   if(isContentActive!=1){
+
+    setTimeout(function(){
+        exploreHeader.style.transition = `2s`;
+        exploreBody.style.transition = `5s`;
+        exploreHeader.style.opacity = `1`;
+        exploreBody.style.opacity = `1`;
+}, 1000);
+
+setTimeout(function(){
+    explore_button1.style.transition = `2s`;
+   explore_button2.style.transition = `2s`;
+    explore_button1.style.opacity = `1`;
+    explore_button2.style.opacity = `1`;
+}, 1500);
+setTimeout(function(){
   explore__container.style.display = "block";
   mainsceen__fireworks.style.display = `none`;
   menu__gamelist.style.display = `none`;
@@ -48,6 +117,7 @@ function trigExplore()
 
   var video = document.getElementById('video');
             video.style.display = "none";
+}, 600);
 }else {
 
   }
@@ -215,21 +285,45 @@ trigMenu__promotion.addEventListener('touchstart', function(e){
 function trigPromotion()
 {
   if(isContentActive!=1){
-    mainBottle__container2.style.display = "none";
-  mainBottle__container1.style.display = "none";
-  mainBottle__container2_OP.style.display = "none";
-  mainBottle__container1_OP.style.display = "none";
-  explore__container.style.display = "none";
   mainsceen__fireworks.style.display = `none`;
   menu__gamelist.style.display = `none`;
   tapgame__container.style.display = "none";
   dicegame__container.style.display = "none";
   flipgame__container.style.display = "none";
-  promotion__container.style.display = "block"
   // game__popup.classList.remove("show");
 
   var video = document.getElementById('video');
             video.style.display = "none";
+
+            setTimeout(function(){
+    exploreHeader.style.transition = `1s`;
+    exploreBody.style.transition = `1s`;
+    exploreHeader.style.opacity = `0`;
+    exploreBody.style.opacity = `0`;
+    }, 300);
+    setTimeout(function(){
+    mainBottle__container2.style.display = "none";
+    mainBottle__container1.style.display = "none";
+    mainBottle__container2_OP.style.display = "none";
+    mainBottle__container1_OP.style.display = "none";
+    promotion__container.style.display = "block"
+    explore__container.style.display = "none";
+    }, 1500);
+
+    setTimeout(function(){
+    explore_button1.style.transition = `1s`;
+    explore_button2.style.transition = `1s`;
+    explore_button1.style.opacity = `0`;
+    explore_button2.style.opacity = `0`;
+    mainBottle__container1.style.transition = `1s`;
+    mainBottle__container2.style.transition = `1s`;
+    mainBottle__container1.style.opacity = `0`;
+    mainBottle__container2.style.opacity = `0`;
+    mainBottle__container1_OP.style.transition = `1s`;
+    mainBottle__container2_OP.style.transition = `1s`;
+    mainBottle__container1_OP.style.opacity = `0`;
+    mainBottle__container2_OP.style.opacity = `0`;
+    }, 400);
 }else {
 
   }
@@ -245,23 +339,47 @@ trigMenu__game.addEventListener('touchstart', function(e){
 function trigGame()
 {
   if(isContentActive!=1){
-    mainBottle__container2.style.display = "none";
-  mainBottle__container1.style.display = "none";
-  mainBottle__container2_OP.style.display = "none";
-  mainBottle__container1_OP.style.display = "none";
   mainsceen__fireworks.style.display = `none`;
     game__popup.classList.remove("show");
-    menu__gamelist.style.display = `block`;
     tapgame__container.style.display = "none";
   dicegame__container.style.display = "none";
   flipgame__container.style.display = "none";
-  explore__container.style.display = "none";
   promotion__container.style.display = "none";
   // newBoard();
   clearTable();
   restartGame();
   var video = document.getElementById('video');
             video.style.display = "none";
+
+    setTimeout(function(){
+    exploreHeader.style.transition = `1s`;
+    exploreBody.style.transition = `1s`;
+    exploreHeader.style.opacity = `0`;
+    exploreBody.style.opacity = `0`;
+    }, 300);
+    setTimeout(function(){
+    mainBottle__container2.style.display = "none";
+    mainBottle__container1.style.display = "none";
+    mainBottle__container2_OP.style.display = "none";
+    mainBottle__container1_OP.style.display = "none";
+    menu__gamelist.style.display = `block`;
+    explore__container.style.display = "none";
+    }, 1500);
+
+    setTimeout(function(){
+    explore_button1.style.transition = `1s`;
+    explore_button2.style.transition = `1s`;
+    explore_button1.style.opacity = `0`;
+    explore_button2.style.opacity = `0`;
+    mainBottle__container1.style.transition = `1s`;
+    mainBottle__container2.style.transition = `1s`;
+    mainBottle__container1.style.opacity = `0`;
+    mainBottle__container2.style.opacity = `0`;
+    mainBottle__container1_OP.style.transition = `1s`;
+    mainBottle__container2_OP.style.transition = `1s`;
+    mainBottle__container1_OP.style.opacity = `0`;
+    mainBottle__container2_OP.style.opacity = `0`;
+    }, 400);
 }else {
     game__popup.classList.add("show");
   }
