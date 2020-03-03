@@ -49,12 +49,12 @@
 
     #mainBottle__container-1_OP{
       display: none;
-      transform: translate(55%, 100px);
+      transform: translate(60%, 85px);
     }
 
     #mainBottle__container-2_OP{
       display: none;
-      transform: translate(55%, 100px);
+      transform: translate(60%, 85px);
     }
 
    /* .loader {
@@ -459,3 +459,20 @@
     }
 
 */
+
+/*content video start here*/
+.video_OP,
+.video1_OP{
+      width: 100%;
+    }
+
+    .video__innerBar_OP,
+    .video__innerBar1_OP {
+      height: 10px;
+      background-color: orangered;
+    }
+
+    #pause_OP,
+    #pause1_OP {
+      display: none;
+    }

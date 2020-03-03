@@ -75,10 +75,10 @@
     </video>
 
      <!-- Video here -->
-          <div class="video__container" id="video__container">
+     <!--      <div class="video__container" id="video__container">
           <div class="c__video">
             <video class="video" muted  >
-              <source src="#" type="video/mp4">
+              <source src="assets/video/BrandEdVideoSeriesCourvoisierBrandHistoryandEducation80sec.mp4" type="video/mp4">
               Your browser does not support HTML5 video.
             </video>
             <div class="video__controls">
@@ -94,14 +94,29 @@
                 </div>
             </div>
           </div>
-          </div>
+          </div> -->
 
-<div class="logo">
+<div class="logo" id="logo">
   <img ontouchstart="toScreenSaver()" class="logo_img" src="assets/couvoisierlogo.png"></button>
 </div>
+<div class="warning">
+  <div class="warning__container">
+    <p class="warning__container__text">
+      Take Note 
+    </p>
+    
+    <ul class="warning__container__list">
+      <li class="warning__container__list__item">Customers (sober/drunk) will be liable to pay for any damages</li>
+      <li class="warning__container__list__item">of Club Illusion's properties. Management of Club Illusion.</li>
+      <li class="warning__container__list__item">Customers (sober/drunk) will be liable to pay for any damages</li>
+      <li class="warning__container__list__item">of Club Illusion's properties. Management of Club Illusion.</li>
+    </ul>
+  </div>
+</div>
 
+<!-- Main screen saver -->
 <div id="mainsceen__fireworks">
-<div class="mainscreen__logotext">
+<div class="mainscreen__logotext" id="mainscreen__logotext">
   <span id="I">C</span>
   <span id="I">O</span>
   <span id="I">U</span>
@@ -115,43 +130,118 @@
   <span id="I">R</span>
 </div>
 <canvas id="c"></canvas>
+ <div class="mainscreen__wrapper">
+    <a href="#" class="btn-toexplore" id="btn-toexplore">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Click to Explore
+    </a>
+  </div>
+  <div class="mainscreen__loader" id="mainscreen__loader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 </div>
 
 <!-- explore button -->
-<div class="menu__explore">
+<!-- <div class="menu__explore" id="menu__explore">
   <button id="trig-menu__explore" class="popup"><img class="menuImg__explore" src="assets/main/menuexplore.png"></button>
   <h2>Explore</h2>
-</div>
+</div> -->
+<div class="menu__explore" id="menu__explore">
+    <div id="menuButton__loader-explore" class="menuloader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img id="trig-menu__explore" class="menuImg__explore" src="assets/main/menuexplore.png">
+   <div class="popup">
+        <h2>Explore</h2>
+    </div>
+  </div>
 
 <!-- Game button -->
-<div class="menu__game">
+<!-- <div class="menu__game" id="menu__game">
   <button id="trig-menu__game" class="popup"><img class="menuImg__games" src="assets/main/menudice.png"><span class="popuptext" id="game__Popup">Kindly place back the coasters to play the game.</span></button>
   <h2>Games</h2>
-</div>
+</div> -->
+
+<div class="menu__game" id="menu__game">
+    <div id="menuButton__loader-game" class="menuloader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img id="trig-menu__game" class="menuImg__games" src="assets/main/menudice.png">
+   <div class="popup">
+        <h2>Games</h2>
+    </div>
+  </div>
 
 <!-- Promotion button -->
-<div class="menu__promotion">
+<!-- <div class="menu__promotion" id="menu__promotion">
   <button id="trig-menu__promotion" class="popup"><img class="menuImg__promotion" src="assets/main/promotion.png"></button>
   <h2>Promotion</h2>
-</div>
+</div> -->
+
+<div class="menu__promotion" id="menu__promotion">
+    <div id="menuButton__loader-promotion" class="menuloader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img id="trig-menu__promotion" class="menuImg__promotion" src="assets/main/promotion.png">
+   <div  class="popup">
+       <h2>Promotion</h2>
+    </div>
+  </div>
 
 <!-- Game list -->
 <div id="menu__gamelist">
+  <div class="gamelist__wrapper" id="gamelist__wrapper">
+    <div class="gamelist__body">
+      <p>Welcome to Courvoisier Game experience!<br>Select any games to start playing!</p>
+    </div>
+  </div>
 <!-- Game1 button -->
-<div class="menu__game1">
-  <button id="trig-menu__game1" class="popup"><img class="menuImg__dice" src="assets/main/menudice.png"></button>
-  <h2>Dice Game</h2>
+<div class="menu__game1" id="menu__game1">
+  <button id="trig-menu__game1" class="popup gamebutton__box"><!--  <img class="menuImg__dice" src="assets/main/menudice.png"> -->
+    <div class="menuImg__dice"></div>
+  </button>
+  <h2>King of Dice</h2>
 </div>
 
 <!-- Game2 button -->
-<div class="menu__game2">
-  <button id="trig-menu__game2" class="popup"><img class="menuImg__flip" src="assets/main/FlipCourvoisier.png"></button>
-  <h2>Flip Courvoisier</h2>
+<div class="menu__game2" id="menu__game2">
+  <button id="trig-menu__game2" class="popup gamebutton__box"><!-- <img class="menuImg__flip" src="assets/main/FlipCourvoisier.png"> -->
+    <div class="menuImg__flip"></div>
+  </button>
+  <h2>Flip to Drink</h2>
 </div>
 
 <!-- Game3 button -->
-<div class="menu__game3">
-  <button id="trig-menu__game3" class="popup"><img class="menuImg__tap" src="assets/main/Tapofwar.png"></button>
+<div class="menu__game3" id="menu__game3">
+  <button id="trig-menu__game3" class="popup"><!-- <img class="menuImg__tap" src="assets/main/Tapofwar.png"> -->
+    <div class="menuImg__tap"></div>
+  </button>
   <h2>Tap of war</h2>
 </div>
 
@@ -167,7 +257,7 @@
   </div>
   <div class="exploreBody__wrapper" id="exploreBody__wrapper">
     <div class="explore__body">
-      <p>Welcome to Courvoisier interative experience!<br>To explore, feel free to touch the screen to explore more.</p>
+      <p>Welcome to Courvoisier Interactive Experience!<br>To explore, feel free to touch the screen to explore more.</p>
     </div>
   </div>
 
@@ -184,14 +274,14 @@
 <!-- Promotion -->
 
 <div class="promotion__container" id="promotion__container">
-  <div class="promotionHeader__wrapper" >
+  <div class="promotionHeader__wrapper" id="promotionHeader__wrapper" >
     <div class="promotion__header"> 
-      <img src="assets/couvoisierlogo1.png">
+      <img src="assets/promotion/Cvs_illusion.jpeg">
     </div>
   </div>
-  <div class="promotionBody__wrapper">
+  <div class="promotionBody__wrapper" id="promotionBody__wrapper">
     <div class="promotion__body">
-      <img src="assets/couvoisierlogo1.png">
+      <img src="assets/promotion/Cvs_illusion2.jpeg">
     </div>
   </div>
 
@@ -200,6 +290,7 @@
 
 <!-- Dice Game -->
 <div class="game__container" id="dicegame__container">
+  <div id="dicegame__wrapper">
   <div class="game__wrapper">
     <div class="game__table-box">
       <div class="game__table-row" id="game__table-row1">
@@ -207,7 +298,7 @@
           <h1>6</h1>
         </div>
         <div class="game__table-cell">
-          <h2>FULL</h2>
+          <h2>FULL GLASS</h2>
         </div>
     </div>
     <div class="game__table-row" id="game__table-row2">
@@ -215,7 +306,7 @@
           <h1>5</h1>
         </div>
         <div class="game__table-cell">
-          <h2>HALF</h2>
+          <h2>HALF GLASS</h2>
         </div>
     </div>
      <div class="game__table-row" id="game__table-row3">
@@ -253,101 +344,80 @@
     </div>
     </div>
 
- <div class="game__wrapper-2">
-    <div class="game__table-box">
-      <div class="game__table-row" id="game__table2-row1">
-        <div class="game__table-cell game__table-cell-width" >
-          <h1>6</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>FULL</h2>
-        </div>
-    </div>
-    <div class="game__table-row" id="game__table2-row2">
-        <div class="game__table-cell game__table-cell-width">
-          <h1>5</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>HALF</h2>
-        </div>
-    </div>
-     <div class="game__table-row" id="game__table2-row3">
-        <div class="game__table-cell game__table-cell-width">
-          <h1>4</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>PLAYER TO THE RIGHT DRINK</h2>
-        </div>
-    </div>
-     <div class="game__table-row" id="game__table2-row4">
-        <div class="game__table-cell game__table-cell-width">
-          <h1>3</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>PLAYER TO THE LEFT DRINK</h2>
-        </div>
-    </div>
-     <div class="game__table-row" id="game__table2-row5">
-        <div class="game__table-cell game__table-cell-width">
-          <h1>2</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>SKIP</h2>
-        </div>
-    </div>
-     <div class="game__table-row" id="game__table2-row6">
-        <div class="game__table-cell game__table-cell-width">
-          <h1>1</h1>
-        </div>
-        <div class="game__table-cell">
-          <h2>POINT SOMEONE TO DRINK</h2>
-        </div>
-    </div>
-    </div>
-    </div>
-
-  <div class="gameButton__wrapper">
+  <!-- <div class="gameButton__wrapper">
     <img src="assets/games/dice/dice-5.png" alt="Dice" class="dice" id="dice" />
-    <!-- <button class="btn-roll btn-roll-icon" id="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button> -->
-    <a href="#" class="btn-roll" id="btn-roll">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Roll Dice
-    </a>
-  </div>
+  </div> -->
 
-  <div class="gameButton__wrapper-2">
-    <!-- <button class="btn-roll btn-roll-icon-2" id="btn-roll-2"><i class="ion-ios-loop"></i>Roll dice</button> -->
-    <a href="#" class="btn-roll" id="btn-roll-2">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Roll Dice
-    </a>
+<div class="diceText"><h2>Touch to roll dice</h2></div>
+
+<div id="ui_dado">
+ <!--  <p id="result"></p> -->
+  <div id="platform">
+    <div id="dice" ontouchstart="rolldice()">
+      <div class="side front">
+        <div class="dot center"></div>
+      </div>
+      <div class="side front inner"></div>
+      <div class="side top">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side top inner"></div>
+      <div class="side right">
+        <div class="dot dtop dleft"></div>
+        <div class="dot center"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side right inner"></div>
+      <div class="side left">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side left inner"></div>
+      <div class="side bottom">
+        <div class="dot center"></div>
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side bottom inner"></div>
+      <div class="side back">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+        <div class="dot center dleft"></div>
+        <div class="dot center dright"></div>
+      </div>
+      <div class="side back inner"></div>
+      <div class="side cover x"></div>
+      <div class="side cover y"></div>
+      <div class="side cover z"></div>
+    </div>
   </div>
+</div>
+
+</div>
 </div>
 
 <!-- Flip Game -->
  <div class="flipgame__container" id="flipgame__container">
-   <div class="flipgame__wrapper">
+   <div class="flipgame__wrapper" id="flipgame__wrapper">
      <div id="flip_board"></div>
    </div>
  </div>
 
  <!-- tap Game -->
  <div class="tapgame__container" id="tapgame__container">
+  <div id="tapgame__wrapper">
    <div class="tapgame__wrapper">
       <div class="playerA__name"><h2>Player A</h2></div>
       <div class="playerB__name"><h2>Player B</h2></div>
-     <!-- <div id="playerA_container"> -->
-      <div id="playerA_board">
-      <!-- <div class="playerA_icon"><img src="123.jpeg"></div> -->
-    </div>
-     <!-- </div> -->
-     <div id="playerB_board"></div>
+      <div class="playerA_icon1"><img src="assets/games/tap/bar.png"></div>
+    <div class="playerA_icon" id="arrow_icon"><img src="assets/games/tap/Arrow.png"></div>
      <div class="tapgame__guide" id="tapgame__guide">
        <h1>Tap as fast as you can!<br><br>See who's the fastest within 10 seconds!</h1>
      </div>
@@ -377,6 +447,7 @@
      </div>
    </div>
  </div>
+ </div>
 
 
 <!-- First bottle -->
@@ -389,6 +460,39 @@
         <h2>Courvoisier X.O.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dicta nihil assumenda, consequuntur natus neque voluptates amet voluptatibus labore quas, at quasi et doloribus molestiae fugiat nobis a delectus dolorem.</p>
     </div> -->
+
+    <div class="contentvideo_loadercontainer1" id="contentvideo_loadercontainer1">
+            <div class="loader" id="contentvideo__loader-1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div ontouchstart="trigContentVideo(0)" class="contentvideo__style-1">
+                <h2>Play<br>Video</h2>
+            </div>
+          </div>
+          <!-- Video here -->
+          <div class="video__container" id="video__container">
+          <div class="c__video">
+            <video class="video" muted  >
+              <source src="assets/video/BrandEdVideoSeriesCourvoisierBrandHistoryandEducation80sec.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video__controls">
+                <div class="video__bar">
+                  <div class="video__innerBar">
+                    
+                  </div>
+                  <div class="video__buttons">
+
+                    <button id="video__play-pause" class="video__buttons"><i class="fas fa-play" id="play"></i><i class="fas fa-pause" id="pause"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
 
     <div id="bottleBase_loadercontainer1" class="bottleBase_loadercontainer1">
     <div id="bottleButtonBase__loader-1" class="loaderBase">
@@ -500,7 +604,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -651,6 +755,39 @@
 <div id="mainBottle__container-2">
   <div class="square" id="square__bottle2">
 
+     <div class="contentvideo_loadercontainer1" id="contentvideo_loadercontainer2" >
+            <div class="loader" id="contentvideo__loader-2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div ontouchstart="trigContentVideo(1)" class="contentvideo__style-1">
+                <h2>Play<br>Video</h2>
+            </div>
+          </div>
+          <!-- Video here -->
+          <div class="video__container" id="video__container1">
+          <div class="c__video">
+            <video class="video1" muted  >
+              <source src="assets/video/BrandEdVideoSeriesCourvoisierBrandHistoryandEducation80sec.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video__controls">
+                <div class="video__bar">
+                  <div class="video__innerBar1">
+                    
+                  </div>
+                  <div class="video__buttons">
+
+                    <button id="video__play-pause1" class="video__buttons"><i class="fas fa-play" id="play1"></i><i class="fas fa-pause" id="pause1"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+
     <div id="bottleBase_loadercontainer1" class="bottleBase_loadercontainer1">
     <div id="bottleButtonBase__loader-1" class="loaderBase">
       <span></span>
@@ -759,7 +896,7 @@
              <h2>Courvoisier V.S.O.P</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_vsop.png">
@@ -990,7 +1127,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -1142,6 +1279,39 @@
 <div id="mainBottle__container-1_OP">
   <div class="square_OP" id="square__bottle1">
 
+    <div class="contentvideo_loadercontainer1" id="contentvideo_loadercontainer1_OP">
+            <div class="loader" id="contentvideo__loader-1_OP">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div ontouchstart="trigContentVideo_OP(0)" class="contentvideo__style-1">
+                <h2>Play<br>Video</h2>
+            </div>
+          </div>
+          <!-- Video here -->
+          <div class="video__container" id="video__container_OP">
+          <div class="c__video">
+            <video class="video_OP" muted  >
+              <source src="assets/video/BrandEdVideoSeriesCourvoisierBrandHistoryandEducation80sec.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video__controls">
+                <div class="video__bar">
+                  <div class="video__innerBar_OP">
+                    
+                  </div>
+                  <div class="video__buttons">
+
+                    <button id="video__play-pause_OP" class="video__buttons"><i class="fas fa-play" id="play_OP"></i><i class="fas fa-pause" id="pause_OP"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+
     <div id="bottleBase_loadercontainer1_OP" class="bottleBase_loadercontainer1">
     <div id="bottleButtonBase__loader-1_OP" class="loaderBase">
       <span></span>
@@ -1252,7 +1422,7 @@
              <h2>Courvoisier X.O.</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_xo.png">
@@ -1403,6 +1573,39 @@
 <div id="mainBottle__container-2_OP">
   <div class="square_OP" id="square__bottle2_OP">
 
+    <div class="contentvideo_loadercontainer1" id="contentvideo_loadercontainer2_OP">
+            <div class="loader" id="contentvideo__loader-2_OP">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div ontouchstart="trigContentVideo_OP(1)" class="contentvideo__style-1">
+                <h2>Play<br>Video</h2>
+            </div>
+          </div>
+          <!-- Video here -->
+          <div class="video__container" id="video__container1_OP">
+          <div class="c__video">
+            <video class="video1_OP" muted  >
+              <source src="assets/video/BrandEdVideoSeriesCourvoisierBrandHistoryandEducation80sec.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video__controls">
+                <div class="video__bar">
+                  <div class="video__innerBar1_OP">
+                    
+                  </div>
+                  <div class="video__buttons">
+
+                    <button id="video__play-pause1_OP" class="video__buttons"><i class="fas fa-play" id="play1_OP"></i><i class="fas fa-pause" id="pause1_OP"></i>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+
     <div id="bottleBase_loadercontainer1_OP" class="bottleBase_loadercontainer1">
     <div id="bottleButtonBase__loader-1_OP" class="loaderBase">
       <span></span>
@@ -1511,7 +1714,7 @@
              <h2>Courvoisier V.S.O.P</h2>
           </div>
           <div class="content-img__bottle1-1">
-              <img src="assets/content/thetaste.png">
+              <img src="assets/games/flip/beercup.png">
           </div>
           <div class="content-img2__bottle1">
               <img src="assets/content/courvoisier_vsop.png">

@@ -1,4 +1,4 @@
- Dice Game css here*/
+ /*Dice Game css here*/
 .game__table-box {
       margin: 50px auto;
     }
@@ -22,6 +22,14 @@
       vertical-align: middle;
     }
 
+    .game__table-cell h1 {
+      font-size: 1.2rem;
+    }
+
+    .game__table-cell h2 {
+      font-size: 1rem;
+    }
+
     .game__table-cell-width {
       width: 20%;
     }
@@ -35,10 +43,14 @@
       display: none;
     }
 
+    #dicegame__wrapper {
+  opacity: 0;
+}
+
     .game__wrapper {
       width: 500px;
       position: absolute;
-      top: 285px;
+      top: 355px;
       left: 15%;
       transform: translate(-25%, -5%);
       overflow: hidden;
@@ -52,43 +64,6 @@
       transform: rotate(180deg);
       overflow: hidden;
     }
-
-    /*.gameButton__wrapper-2 button{
-      position: absolute;
-      width: 200px;
-      height: 50px;
-      left: 38%;
-      top: 95px;
-      transform: rotate(180deg);
-      color: white;
-      background: none;
-      border: 2px solid white;
-      border-radius: 13px;
-      font-family: Lato;
-      font-size: 20px;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-weight: 300;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .gameButton__wrapper button {
-      position: absolute;
-      width: 200px;
-      height: 50px;
-      left: 44%;
-      transform: translateX(-50%);
-      color: white;
-      background: none;
-      border: 2px solid white;
-      border-radius: 13px;
-      font-family: Lato;
-      font-size: 20px;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-weight: 300;
-      transition: background-color 0.3s, color 0.3s;
-    }*/
 
     .gameButton__wrapper-2 a{
       position: absolute;
@@ -239,34 +214,7 @@
       .btn-roll {
         top: 690px;
         position: absolute;
-        /*width: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #555;
-        background: none;
-        border: none;
-        font-family: Lato;
-        font-size: 20px;
-        text-transform: uppercase;
-        cursor: pointer;
-        font-weight: 300;
-        transition: background-color 0.3s, color 0.3s;*/
         }
-
-        /*.btn-roll-icon i {
-          position: relative;
-          top: 6px;
-          color: white;
-          font-size: 20px;
-        }
-
-        .btn-roll-icon-2 i {
-          position: relative;
-          top: 0px;
-          right: 6px;
-          color: white;
-          font-size: 20px;
-        }*/
 
 
 
@@ -367,14 +315,18 @@
   display: none;
 }
 
-#flipgame__video {
-      width: 600px;
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    border: 1px solid floralwhite;
-    border-radius: 25px 25px 25px 25px;
-    box-shadow: 0px 0px 4px 1px white;
+#flipgame__wrapper {
+  opacity: 0;
+}
+
+#flipgame__text {
+      position:relative;
+      top: 270px;
+      left: 50px;
+}
+#flipgame__text h1{
+    color: white;
+    text-align: center;
 }
 
 #flipgame_start {
@@ -388,21 +340,27 @@
     animation:buttonOutline2 1s linear infinite;
 }
 
+.buttonStart__flip {
+  position: absolute;
+  top: 75%;
+  left: 49%;
+}
+
 .flipgame__container {
   position: relative;
 }
 
 .flipgame__wrapper {
   position: absolute;
-  transform: translate(12%,15%);
+  transform: translate(15%,15%);
   overflow: hidden;
 }
 
 div#flip_board{
   /*background:#CCC;*/
   /*border:#999 1px solid;*/
-  width:1200px;
-  height:700px;
+  width:1400px;
+  height:900px;
   padding:24px;
   margin:0px auto;
 }
@@ -412,8 +370,8 @@ div#flip_board{
   background-size: contain;
   background-position: center;
   /*border:#000 1px solid;*/
-  width:170px;
-  height:180px;
+  width:200px;
+  height:225px;
   float:left;
   margin:10px;
   padding:20px;
@@ -452,8 +410,15 @@ div#flip_board{
 .flipgame__tileImg2{
         width:800px;
     position: absolute;
-    bottom: 7px;
-    left: 11%;
+    bottom: 150px;
+    left:23%;
+}
+
+.flip__finishedtext {
+      color: white;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 46%;
 }
 
 
@@ -463,6 +428,10 @@ div#flip_board{
 
 #tapgame__container {
   display: none;
+}
+
+#tapgame__wrapper {
+  opacity: 0;
 }
 
 #tapgame__section {
@@ -552,18 +521,6 @@ div#flip_board{
     animation: move 3s linear infinite;
 }
 
-/*#playerA_board {
-  background: url(../assets/games/tap/wave.png);
-    /*background-size: contain;*/
-   /* width: 100%;
-    height: 22px;
-    padding: 6px;
-    margin: 0px auto;*/
-    /*top: 200px;*/
-    
-    /*animation: move 0.5s linear infinite;*/
-/*}*/
-
 @keyframes move {
   /*0%{
     background-position-x: 0;
@@ -604,12 +561,24 @@ div#flip_board{
 
 .playerA_icon {
   position: absolute;
-  bottom: 9px;
-  right:1px;
+  bottom: 71%;
+  right:43%;
 }
 
 .playerA_icon img{
-  width: 100px;
+  width: 300px;
+}
+
+.playerA_icon1 {
+  position: absolute;
+  bottom: 64%;
+  right:-6%;
+  width: 100%;
+}
+
+.playerA_icon1 img{
+  width: 1470px;
+  height: 200px;
 }
 
 .playerA__name{
@@ -636,8 +605,8 @@ div#flip_board{
 
 .tapgame__guide {
   position: absolute;
-  top: 40%;
-  left: 28%;
+  top: 42%;
+  left: 35%;
 }
 
 .tapgame__guide h1 {
@@ -649,7 +618,7 @@ div#flip_board{
 .buttonPlayAgain__board {
   position: absolute;
   top: 75%;
-  left: 40%;
+  left: 47%;
 }
 
 .buttonA__board {
@@ -660,7 +629,7 @@ div#flip_board{
 .buttonB__board {
   position: absolute;
   top: 60%;
-  left: 60%;
+  left: 62%;
 }
 
 #playerA_button {
@@ -758,8 +727,8 @@ div#flip_board{
 
 #tapgame__timeMode {
   position: absolute;
-  top: 300px;
-  left: 620px;
+  top: 385px;
+  left: 865px;
   display: none;
 }
 
@@ -770,8 +739,8 @@ div#flip_board{
 
 #tapgame__readytimeMode {
   position: absolute;
-  top: 300px;
-  left: 600px;
+  top: 385px;
+  left: 840px;
   display: none;
 }
 
@@ -782,8 +751,8 @@ div#flip_board{
 
 #tapgame__resultMode {
   position: absolute;
-  top: 320px;
-  left: 500px;
+  top: 385px;
+  left: 775px;
   display: none;
 }
 
@@ -792,4 +761,196 @@ div#flip_board{
   font-size: 4.3rem;
 }
 
-/* Tap game css end
+/* Tap game css end*/
+
+
+
+
+
+/* 3D dice here*/
+
+.diceText {
+color: white;
+    position: absolute;
+    top: 125px;
+    font-size: 1.2rem;
+    left: 43%;
+    
+  }
+
+#result {
+  text-align: center;
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+  position: absolute;
+  width: 70px;
+  bottom: -30%;
+  left: calc(50% - 40px);
+}
+
+#ui_dado {
+  margin: 0px auto;
+  position: absolute;
+  width: 100%;
+  transition: opacity .4s;
+  text-align: center;
+  left: 0%;
+  top: 361px;
+}
+#ui_dado #platform.playing > #dice {
+  animation-duration: 1s;
+}
+#ui_dado #platform.playing {
+  transform-style: preserve-3d;
+  animation: roll 1s linear;
+}
+#ui_dado #platform.stop > #dice,
+#ui_dado #platform.stop {
+  animation-play-state: paused;
+}
+#ui_dado #platform {
+  margin-top: 100px;
+  margin-bottom: 120px;
+  margin-left: calc(50% - 50px);
+  margin-right: calc(50% - 50px);
+  height: 120px;
+}
+#ui_dado #dice {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(10deg) rotateZ(-15deg);
+}
+#ui_dado #platform.playing > #dice {
+  animation: spin 1.4s infinite linear;
+}
+#ui_dado .side {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  box-shadow: inset 0 0 40px #ccc;
+  border-radius: 20px;
+}
+#ui_dado #dice .cover, #ui_dado #dice .inner {
+  background: #e0e0e0;
+  box-shadow: none;
+}
+#ui_dado #dice .cover {
+  border-radius: 0;
+}
+#ui_dado #dice .cover.x {
+  transform: rotateY(90deg);
+}
+#ui_dado #dice .cover.z {
+  transform: rotateX(90deg);
+}
+#ui_dado #dice .front {
+  transform: translateZ(50px);
+}
+#ui_dado #dice .front.inner {
+  transform: translateZ(49px);
+}
+#ui_dado #dice .back {
+  transform: rotateX(-180deg) translateZ(50px);
+}
+#ui_dado #dice .back.inner {
+  transform: rotateX(-180deg) translateZ(49px);
+}
+#ui_dado #dice .right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+#ui_dado #dice .right.inner {
+  transform: rotateY(90deg) translateZ(49px);
+}
+#ui_dado #dice .left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+#ui_dado #dice .left.inner {
+  transform: rotateY(-90deg) translateZ(49px);
+}
+#ui_dado #dice .top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+#ui_dado #dice .top.inner {
+  transform: rotateX(90deg) translateZ(49px);
+}
+#ui_dado #dice .bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+#ui_dado #dice .bottom.inner {
+  transform: rotateX(-90deg) translateZ(49px);
+}
+#ui_dado .dot {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 23px;
+  background: #444;
+  box-shadow: inset 5px 0 10px #000;
+}
+#ui_dado .dot.center {
+  margin: 38px 0 0 38px;
+}
+#ui_dado .dot.center.dleft {
+  margin: 38px 0 0 10px;
+}
+#ui_dado .dot.center.dright {
+  margin: 38px 0 0 67px;
+}
+#ui_dado .dot.dtop {
+  margin-top: 10px;
+}
+#ui_dado .dot.dleft {
+  margin-left: 67px;
+}
+#ui_dado .dot.dright {
+  margin-left: 10px;
+}
+#ui_dado .dot.dbottom {
+  margin-top: 67px;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: translateZ(-100px) rotateX(180deg) rotateY(180deg) rotateZ(0deg);
+  }
+  33% {
+    transform: translateZ(-100px) rotateX(360deg) rotateY(90deg) rotateZ(180deg);
+  }
+  50% {
+    transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+  66% {
+    transform: translateZ(-100px) rotateX(180deg) rotateY(360deg) rotateZ(270deg);
+  }
+  83% {
+    transform: translateZ(-100px) rotateX(270deg) rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    transform: translateZ(-100px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+@keyframes roll {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  30% {
+    transform: translate3d(150px, -20px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, -50px, 0px);
+  }
+  80% {
+    transform: translate3d(-150px, -20px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}

@@ -18,8 +18,8 @@ Array.prototype.flip_tile_shuffle = function() {
 function flipStartGame() {
 	var output = '';
 
-	output += `<video id="flipgame__video" autoplay loop muted><source src="assets/video/flipgame2.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
-	<div class="buttonStart__board">
+	output += `<div id="flipgame__text"><h1>Randomly flip the bottles<br>and the unlucky one get to drink!</h1></div>
+	<div class="buttonStart__flip">
        <button id="flipgame_start" ontouchstart="startFlipGame()">Start Game</button>
      </div>`;
 		
@@ -65,7 +65,7 @@ function flipTile(tile,val) {
 		tile.style.transition = "1s";
 		tile.style.transform = "scale(0)";
 		if (val == '2') {
-			tile.innerHTML = `<img class="flipgame__tileImg2" src="assets/games/flip/beercup.png">`;
+			tile.innerHTML = `<img class="flipgame__tileImg2" src="assets/games/flip/beercup.png"><h2 class="flip__finishedtext">Bottoms up!</h2>`;
 			tile.style.transition = "3s";
 			tile.style.background = "transparent";
 			tile.style.transform = "";
