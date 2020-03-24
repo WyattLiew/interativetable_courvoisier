@@ -167,7 +167,7 @@ function rolldice(){
 	    
 	    // var diceresult = document.getElementById('result')
 	    // diceresult.innerHTML= number;
-
+	    clearTable();
 	    switch(number) {
 	     	case 1:
 	   		 game__tableRow6.style.background= `#2F605D`;
